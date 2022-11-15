@@ -1,0 +1,22 @@
+{
+  "name": "mixtape",
+  "version": "1.0.0",
+  "description": "a so-called social experiment around analogical mixtapes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwwonka/mixtape.git"
+  },
+  "author": "wwwonka",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wwwonka/mixtape/issues"
+  },
+  "homepage": "https://github.com/wwwonka/mixtape#readme",
+  "dependencies": {
+    "three": "^0.146.0"
+  }
+}
