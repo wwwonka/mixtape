@@ -21,3 +21,4 @@ Temporary Items
 node_modules/
 
 # Project Specific
+.env
