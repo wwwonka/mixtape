@@ -7,14 +7,12 @@ async function loadMixtape() {
 	const loader = new GLTFLoader();
 
 	const [mixtapeData] = await Promise.all([
-		loader.loadAsync("/models/mixtape.glb"),
+		loader.loadAsync("/models/mixtape6.glb"),
 	]);
 
 	console.log("Mixtape loaded!", mixtapeData);
 
 	const mixtape = setupModel(mixtapeData);
-	mixtape.position.set(0, 0, 0);
-	mixtape.rotation.set(0, 0, 0);
 
 	mixtape.children[1].material.side = DoubleSide;
 

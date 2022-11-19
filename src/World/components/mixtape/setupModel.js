@@ -9,13 +9,9 @@ function setupModel(data) {
 
 	const mixer = new AnimationMixer(model);
 	const action = mixer.clipAction(clip);
-	// action.reset();
-	// action.clampWhenFinished = true;
-	// ac;
+
 	action.play();
 	action.paused = true;
-	// window.action = action;
-	// action.fadeOut(3);
 
 	const btns = document.querySelectorAll(".btn");
 
@@ -29,6 +25,7 @@ function setupModel(data) {
 				setTimeout(() => {
 					song.play();
 				}, 1800);
+
 				// action.fadeIn(3);
 			} else {
 				action.halt(0.75);
@@ -37,15 +34,10 @@ function setupModel(data) {
 				hissing.pause();
 			}
 		};
-		// action.play();
-
-		// remainingBtn.classList.toggle("active");
 	}
 
 	model.tick = (delta) => {
-		// if (active) {
 		mixer.update(delta);
-		// }
 	};
 
 	return model;
