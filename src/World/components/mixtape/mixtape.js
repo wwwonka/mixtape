@@ -7,7 +7,7 @@ async function loadMixtape() {
 	const loader = new GLTFLoader();
 
 	const [mixtapeData] = await Promise.all([
-		loader.loadAsync("/models/mixtape.glb"),
+		loader.loadAsync("/models/mixtape_optimized.glb"),
 	]);
 
 	console.log("Mixtape loaded!", mixtapeData);
