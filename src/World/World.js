@@ -9,7 +9,6 @@ import {Resizer} from "./systems/Resizer.js";
 import {Loop} from "./systems/Loop.js";
 
 let camera;
-x;
 let controls;
 let renderer;
 let scene;
