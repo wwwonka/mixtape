@@ -18,10 +18,9 @@
 
 			// These folders will show in their own sections:
 			"src": true,
+			"assets": true,
 			"build": true
 		},
-
-		// "telemetry.enableCrashReporter": false,
 		"dotnetAcquisitionExtension.enableTelemetry": false,
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -37,25 +36,19 @@
 	// https://fsymbols.com/bubble/
 	"folders": [
 		{
-			"name": "══  WEBSITE  ═════",
-			// "name": "══  𝗪𝗘𝗕𝗦𝗜𝗧𝗘  ═════",
-			// "name": "══  Ｗ ＥＢＳＩＴＥ  ══",
-			// "name": "══  𝕎 𝔼 𝔹 𝕊 𝕀 𝕋 𝔼  ═════",
-			// "name": "═════ 𝗪 𝗘 𝗕 𝗦 𝗜 𝗧 𝗘",
-			"path": "./src/"
+			"name": "Website",
+			"path": "src"
 		},
 		{
-			"name": "══  BUILD   ══════",
+			"name": "Assets",
+			"path": "./assets/"
+		},
+		{
+			"name": "Build",
 			"path": "./build"
 		},
-		// {
-		// 	"name": "══  GAS   ═══════",
-		// 	"path": "./src/google-apps-script"
-		// },
 		{
-			"name": "═════════════",
-			// "name": " ็็็็็็็็็็็็็็็็็็็็็็็็",
-			// "name": "°º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°`°º¤ø,¸",
+			"name": "Config",
 			"path": "."
 		}
 	]

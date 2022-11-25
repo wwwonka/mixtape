@@ -1,21 +1,29 @@
 import {World} from "./World/World.js";
 
 async function main() {
-	// 3D MIXTAPE
-
 	// Get a reference to the container element
 	const container = document.querySelector("#scene-container");
 
-	// create a new world
+	// Create a new world
 	const world = new World(container);
 
-	// complete async tasks
+	// Complete async tasks
 	await world.init();
 
-	// start the animation loop
+	// Start the animation loop
 	world.start();
 }
 
 main().catch((err) => {
 	console.error(err);
+
+	// Ready
+	player.addListener("ready", ({device_id}) => {
+		console.log("Ready with Device ID", device_id);
+	});
+
+	// Not Ready
+	player.addListener("not_ready", ({device_id}) => {
+		console.log("Device ID has gone offline", device_id);
+	});
 });

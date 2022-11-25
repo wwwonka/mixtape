@@ -6,7 +6,7 @@ function createControls(camera, canvas) {
 	controls.enableDamping = true;
 	controls.maxZoom = 0.2;
 
-	// forward controls.update to our custom .tick method
+	// Forward controls.update to our custom .tick method
 	controls.tick = () => controls.update();
 
 	return controls;

@@ -5,7 +5,7 @@ function setupModel(data) {
 	const clip = data.animations[0];
 
 	const song = new Audio("/audio/raingod.mp3");
-	const hissing = new Audio("/audio/hissing-hi.mp3");
+	const hissing = new Audio("/audio/hissing.mp3");
 
 	const mixer = new AnimationMixer(model);
 	const action = mixer.clipAction(clip);

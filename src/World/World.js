@@ -9,6 +9,7 @@ import {Resizer} from "./systems/Resizer.js";
 import {Loop} from "./systems/Loop.js";
 
 let camera;
+x;
 let controls;
 let renderer;
 let scene;
@@ -33,16 +34,21 @@ class World {
 
 	async init() {
 		const {mixtape} = await loadMixtape();
-		// move the target to the center of the front bird
+
+		// Move the target to the center of the mixtape
 		controls.target.copy(mixtape.position);
+
 		loop.updatables.push(mixtape);
+
 		scene.add(mixtape);
 	}
 
+	// Render single frame
 	render() {
 		renderer.render(scene, camera);
 	}
 
+	// Animation loop
 	start() {
 		loop.start();
 	}

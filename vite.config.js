@@ -4,7 +4,7 @@ import {threeMinifier} from "@yushijinhun/three-minifier-rollup";
 import {ViteMinifyPlugin} from "vite-plugin-minify";
 
 export default defineConfig({
-	// root: "./src",
+	root: ".",
 	publicDir: "assets",
 	server: {
 		host: "0.0.0.0",
