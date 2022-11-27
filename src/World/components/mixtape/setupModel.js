@@ -1,4 +1,4 @@
-import {AnimationMixer} from "three";
+import {AnimationMixer, MathUtils} from "three";
 
 function setupModel(data) {
 	const model = data.scene.children[0];
@@ -36,8 +36,19 @@ function setupModel(data) {
 		};
 	}
 
+	model.position.y = 0.05;
+
+	const radiansPerSecond = MathUtils.degToRad(2);
+
 	model.tick = (delta) => {
 		mixer.update(delta);
+
+		// Little statup Animation
+		if (model.rotation.x <= MathUtils.degToRad(4.1)) {
+			model.rotation.z += radiansPerSecond * delta;
+			model.rotation.x += radiansPerSecond * delta;
+			model.rotation.y += radiansPerSecond * delta;
+		}
 	};
 
 	return model;

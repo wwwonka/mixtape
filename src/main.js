@@ -1,6 +1,8 @@
 import {World} from "./World/World.js";
+import testBrowserFeatures from "./Features/testFeatures.js";
 
 async function main() {
+	testBrowserFeatures();
 	// Get a reference to the container element
 	const container = document.querySelector("#scene-container");
 

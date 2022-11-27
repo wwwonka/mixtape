@@ -1,0 +1,16 @@
+# [build]
+#     command = "cd build/netlify-functions && npm i && cd ../website"
+#     functions = "build/netlify-functions"
+#     publish = "build/website"
+
+[dev]
+    autoLaunch = false
+
+[functions]
+    directory = ".netlify/functions"
+
+[[redirects]]
+    force = true
+    from = "/api/*"
+    status = 200
+    to = ".netlify/functions/:splat"

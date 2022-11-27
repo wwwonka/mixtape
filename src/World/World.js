@@ -36,10 +36,10 @@ class World {
 
 		// Move the target to the center of the mixtape
 		controls.target.copy(mixtape.position);
-
 		loop.updatables.push(mixtape);
 
 		scene.add(mixtape);
+		scene.get;
 	}
 
 	// Render single frame

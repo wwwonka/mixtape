@@ -1,6 +1,6 @@
 {
 	"settings": {
-		// Files to hide:
+		// Files & Folders to hide:
 		"files.exclude": {
 			// Defaults
 			"**/.git": true,
@@ -13,45 +13,47 @@
 			"**/node_modules": true,
 			"**/package-lock.json": true,
 
-			// Google Apps Scripts
-			"**/appsscript.json": true,
+			// Project Specifics
+			"dev-dist": true,
+			"README.md": true,
 
 			// These folders will show in their own sections:
 			"src": true,
 			"assets": true,
 			"build": true
 		},
+
+		// Disable Telemetry
 		"dotnetAcquisitionExtension.enableTelemetry": false,
 		"editor.formatOnSave": true,
+
+		// Language Formatting
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"[javascript]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
 		"[svg]": {
 			"editor.defaultFormatter": "jock.svg"
-		}
+		},
+
+		// Extensions Settings
+		"glTF.defaultV1Engine": "Three.js"
+		// "material-icon-theme.activeIconPack": "nest"
 	},
 
-	// https://yaytext.com/fr/souligner/
-	// https://fsymbols.com/bubble/
+	// Folders to include
 	"folders": [
 		{
-			"name": "Website",
-			"path": "src"
+			"name": "[Website]",
+			"path": "../src"
 		},
 		{
-			"name": "Assets",
-			"path": "./assets/"
+			"name": "[Assets]",
+			"path": "../assets/"
 		},
 		{
-			"name": "Build",
-			"path": "./build"
-		},
-		{
-			"name": "Config",
-			"path": "."
+			"name": "[Config]",
+			"path": ".."
 		}
 	]
 }
-
-// https://computers.tutsplus.com/tutorials/using-monodraw-to-comment-code--cms-27278

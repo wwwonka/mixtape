@@ -1,14 +1,10 @@
-import {DirectionalLight, HemisphereLight} from "three";
+import {Camera, DirectionalLight, HemisphereLight} from "three";
 
 function createLights() {
-	const ambientLight = new HemisphereLight("white", "darkslategrey", 2);
+	const ambientLight = new HemisphereLight("darkGray", "#fefbd8", 7.4);
 
-	const mainLight = new DirectionalLight("white", 9);
-	mainLight.position.set(10, 10, 10);
-
-	// const rimLight = new DirectionalLight("white", 11);
-	// rimLight.position.set(-10, -10, -10);
-	// rimLight.lookAt(0, 0, 0);
+	const mainLight = new DirectionalLight("white", 0.88);
+	mainLight.position.set(4.4, 5.33, 11.3);
 
 	return {ambientLight, mainLight};
 }

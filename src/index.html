@@ -4,47 +4,55 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- <title>&lrm;</title> -->
     <title>#mixtape</title>
-    <meta name="description" content="A so-called social experiment around analogical mixtapes">
+    <meta name="description" content="A so-called 'social experiment' around analogical mixtapes">
     <meta name="keywords" content="mixtape">
     <meta name="author" content="wwwonka">
 
-    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
 
     <!-- Android  -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F2F2">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#F2F2F2">
+    <!-- <meta name="mobile-web-app-capable" content="yes"> -->
+    <!-- <link rel="manifest" href="/app.webmanifest" /> -->
 
     <!-- iOS -->
     <meta name="apple-mobile-web-app-title" content="#mixtape">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/ios.png" sizes="180x180">
 
-    <!-- Meta https://ogp.me/ -->
+    <!-- Meta --- https://ogp.me/ -->
     <meta property="og:url" content="https://3dmixtape.netlify.app/" />
     <meta property="og:title" content="#mixtape" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en" />
     <meta property="og:description" content="Hey, I made you a mixtape..." />
-    <meta property="og:image" content="https://3dmixtape.netlify.app/icons/screenshot.jpg" />
+    <meta property="og:image" content="https://3dmixtape.netlify.app/icons/screenrecording.gif" />
 
     <!-- Twitter -->
     <meta name="twitter:url" content="https://3dmixtape.netlify.app/" />
     <meta name="twitter:title" content="#mixtape" />
     <meta name="twitter:card" content="#mixtape" />
     <meta name="twitter:description" content="Hey, I made you a mixtape..." />
-    <meta name="twitter:image" content="https://3dmixtape.netlify.app/icons/screenshot.jpg" />
+    <meta name="twitter:image" content="https://3dmixtape.netlify.app/icons/screenrecording.gif" />
 
-    <link rel="stylesheet" href="./src/styles/main.css" type="text/css">
-    <link rel="stylesheet" href="./src/styles/playback-buttons.css" type="text/css">
+    <link rel="stylesheet" href="styles/main.css" type="text/css">
+    <link rel="stylesheet" href="styles/playback-buttons.css" type="text/css">
+    <link rel="stylesheet" href="styles/pwa-title-bar.css" type="text/css">
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="main.js"></script>
 
 </head>
 
 <body>
+
+    <div class="pwa-title-bar"></div>
+
     <div id="scene-container">
         <!-- Our <canvas> will be inserted here -->
     </div>
@@ -76,6 +84,7 @@
                 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
         </symbol>
     </svg>
+
 </body>
 
 </html>
