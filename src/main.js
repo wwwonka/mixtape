@@ -1,8 +1,10 @@
 import {World} from "./World/World.js";
-import testBrowserFeatures from "./Features/testFeatures.js";
+// import testBrowserFeatures from "./Features/testFeatures.js";
+// import {listenKeyboardShorcuts} from "./Observers/keyboardShortcuts.js";
 
 async function main() {
-	testBrowserFeatures();
+	// testBrowserFeatures();
+	// listenKeyboardShorcuts();
 	// Get a reference to the container element
 	const container = document.querySelector("#scene-container");
 

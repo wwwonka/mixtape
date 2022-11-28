@@ -23,6 +23,11 @@
 			"build": true
 		},
 
+		// File Explorer
+		"explorer.sortOrder": "type",
+		"explorer.compactFolders": true,
+		"explorer.sortOrderLexicographicOptions": "upper",
+
 		// Disable Telemetry
 		"dotnetAcquisitionExtension.enableTelemetry": false,
 		"editor.formatOnSave": true,
@@ -38,13 +43,12 @@
 
 		// Extensions Settings
 		"glTF.defaultV1Engine": "Three.js"
-		// "material-icon-theme.activeIconPack": "nest"
 	},
 
 	// Folders to include
 	"folders": [
 		{
-			"name": "[Website]",
+			"name": "[Front-End]",
 			"path": "../src"
 		},
 		{
@@ -54,6 +58,10 @@
 		{
 			"name": "[Config]",
 			"path": ".."
+		},
+		{
+			"name": "[Build]",
+			"path": "../build/"
 		}
 	]
 }
