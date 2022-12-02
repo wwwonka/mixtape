@@ -4,6 +4,7 @@ import {threeMinifier} from "@yushijinhun/three-minifier-rollup";
 import {ViteMinifyPlugin} from "vite-plugin-minify";
 import {VitePWA} from "vite-plugin-pwa";
 import mkcert from "vite-plugin-mkcert";
+// import manifest from "./src/PWA/manifest.json";
 
 export default defineConfig({
 	root: "src/", // index.html goes inside src/ folder
@@ -65,7 +66,7 @@ export default defineConfig({
 			},
 			manifest: {
 				id: "#mixtape",
-				name: "mixtape",
+				name: "#mixtape",
 				short_name: "#mixtape",
 				description:
 					"A so-called social 'experiment' around analogical mixtapes.",

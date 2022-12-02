@@ -20,6 +20,10 @@ async function main() {
 	document.addEventListener(
 		"DOMContentLoaded",
 		(event) => {
+			console.log(
+				"This is only a test to see how quick Cloudflare Pages build and take time propagate"
+			);
+			console.log("CURRENT_TIME", new Date());
 			// we can move only if we are not in a browser's tab
 			let isBrowser = matchMedia("(display-mode: browser)").matches;
 			if (!isBrowser) {

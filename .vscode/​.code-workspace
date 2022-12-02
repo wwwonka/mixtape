@@ -14,7 +14,8 @@
 			"**/package-lock.json": true,
 
 			// Project Specifics
-			"dev-dist": true,
+			// "**/dev-dist": true,
+			"dev",
 			"README.md": true,
 
 			// These folders will show in their own sections:
@@ -43,7 +44,7 @@
 
 		// Extensions Settings
 		"glTF.defaultV1Engine": "Three.js",
-		"liveServer.settings.multiRootWorkspaceName": "[Website]"
+		// "liveServer.settings.multiRootWorkspaceName": "[Website]"
 	},
 
 	// Folders to include
