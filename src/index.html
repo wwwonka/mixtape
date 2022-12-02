@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!-- <title>&lrm;</title> -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover, user-scalable=0">
     <title>#mixtape</title>
+    <!-- <title>&lrm;</title> -->
     <meta name="description" content="A so-called 'social experiment' around analogical mixtapes">
-    <meta name="keywords" content="mixtape">
+    <meta name="keywords" content="#mixtape mixtape">
     <meta name="author" content="wwwonka">
 
-    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+    <!-- <link rel="icon" href="icons/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="icon" type="image/png" href="icons/icon.png">
 
     <!-- Android  -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F2F2">
@@ -23,8 +25,8 @@
     <!-- iOS -->
     <meta name="apple-mobile-web-app-title" content="#mixtape">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="icons/ios.png" sizes="180x180">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="icons/ios-icon/ios.png" sizes="180x180">
 
     <!-- Meta --- https://ogp.me/ -->
     <meta property="og:url" content="https://3dmixtape.netlify.app/" />
@@ -32,18 +34,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en" />
     <meta property="og:description" content="Hey, I made you a mixtape..." />
-    <meta property="og:image" content="https://3dmixtape.netlify.app/icons/screenrecording.gif" />
+    <meta property="og:image" content="https://3dmixtape.netlify.app/icons/pwa-misc/screenrecording.gif" />
 
     <!-- Twitter -->
     <meta name="twitter:url" content="https://3dmixtape.netlify.app/" />
     <meta name="twitter:title" content="#mixtape" />
     <meta name="twitter:card" content="#mixtape" />
     <meta name="twitter:description" content="Hey, I made you a mixtape..." />
-    <meta name="twitter:image" content="https://3dmixtape.netlify.app/icons/screenrecording.gif" />
+    <meta name="twitter:image" content="https://3dmixtape.netlify.app/icons/pwa-misc/screenrecording.gif" />
 
     <link rel="stylesheet" href="styles/main.css" type="text/css">
     <link rel="stylesheet" href="styles/playback-buttons.css" type="text/css">
     <link rel="stylesheet" href="styles/pwa-title-bar.css" type="text/css">
+    <link rel="stylesheet" href="styles/cursor.css" type="text/css">
 
     <script type="module" src="main.js"></script>
 
@@ -57,7 +60,8 @@
         <!-- Our <canvas> will be inserted here -->
     </div>
 
-    <div class="container">
+    <div class="ui-container">
+
         <button class="btn play-pause">
             <div class="icon-container">
                 <svg class="icon play">
@@ -70,7 +74,6 @@
                 </svg>
             </div>
         </button>
-
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="icons">

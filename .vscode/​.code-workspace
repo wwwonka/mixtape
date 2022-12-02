@@ -42,13 +42,14 @@
 		},
 
 		// Extensions Settings
-		"glTF.defaultV1Engine": "Three.js"
+		"glTF.defaultV1Engine": "Three.js",
+		"liveServer.settings.multiRootWorkspaceName": "[Website]"
 	},
 
 	// Folders to include
 	"folders": [
 		{
-			"name": "[Front-End]",
+			"name": "[Website]",
 			"path": "../src"
 		},
 		{
@@ -58,10 +59,10 @@
 		{
 			"name": "[Config]",
 			"path": ".."
-		},
-		{
-			"name": "[Build]",
-			"path": "../build/"
 		}
+		// {
+		// 	"name": "[Build]",
+		// 	"path": "../build/"
+		// }
 	]
 }

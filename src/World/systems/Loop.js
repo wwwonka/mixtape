@@ -11,7 +11,7 @@ class Loop {
 	}
 
 	start() {
-		this.renderer.setAnimationLoop(() => {
+		this.renderer.setAnimationLoop((time) => {
 			// Tell every animated object to tick forward one frame
 			this.tick();
 
@@ -24,10 +24,12 @@ class Loop {
 		this.renderer.setAnimationLoop(null);
 	}
 
-	tick() {
+	tick(time) {
 		// Only call the getDelta function once per frame!
 		const delta = clock.getDelta();
 
+		// Update
+		TWEEN.update(time);
 		// console.log(
 		//   `The last frame rendered in ${delta * 1000} milliseconds`,
 		// );

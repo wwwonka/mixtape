@@ -1,3 +1,10 @@
 {
-	"recommendations": ["cesium.gltf-vscode"]
+	"recommendations": [
+		// 3D GLTF debug
+		"cesium.gltf-vscode",
+
+		// PWA-related
+		"PWABuilder.pwa-studio",
+		"webhint.vscode-webhint"
+	]
 }

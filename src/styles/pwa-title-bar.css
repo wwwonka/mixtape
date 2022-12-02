@@ -13,3 +13,7 @@
 	-webkit-app-region: drag;
 	app-region: drag;
 }
+
+.hidden {
+	display: none;
+}

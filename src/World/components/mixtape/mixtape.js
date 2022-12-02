@@ -1,5 +1,7 @@
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import {DoubleSide, MathUtils} from "three";
+import {onMouseInAnimation, onMouseOutAnimation} from "./setupAnimations.js";
+import {TWEEN} from "@tweenjs/tween.js/dist/tween.umd";
 
 import {setupModel} from "./setupModel.js";
 
@@ -7,26 +9,24 @@ async function loadMixtape() {
 	const loader = new GLTFLoader();
 
 	const [mixtapeData] = await Promise.all([
-		loader.loadAsync("models/mixtape_optimized.glb"),
+		loader.loadAsync("models/mixtape_dummy.glb"),
 	]);
-
-	// console.log("Mixtape loaded!", mixtapeData);
 
 	const mixtape = setupModel(mixtapeData);
 
-	mixtape.children[2].children[0].material.side = DoubleSide;
-	console.log(mixtape);
+	mixtape.onMouseIn = () => {
+		onMouseInAnimation(mixtape);
+	};
 
-	// const radiansPerSecond = MathUtils.degToRad(2);
-	// // // this method will be called once per frame
-	// mixtape.tick = (delta) => {
-	// 	// increase the cube's rotation each frame
-	// 	if (mixtape.rotation.x <= MathUtils.degToRad(4.1)) {
-	// 		mixtape.rotation.z += radiansPerSecond * delta;
-	// 		mixtape.rotation.x += radiansPerSecond * delta;
-	// 		mixtape.rotation.y += radiansPerSecond * delta;
-	// 	}
-	// };
+	mixtape.onMouseOut = () => {
+		onMouseOutAnimation(mixtape);
+	};
+
+	//Make mixtape_dummy invisible
+	mixtape.getObjectByName("mixtape_dummy").visible = false;
+
+	// Make mixtape material visible on the inside
+	mixtape.getObjectByName("mixtape_body_1").material.side = DoubleSide;
 
 	return {
 		mixtape,

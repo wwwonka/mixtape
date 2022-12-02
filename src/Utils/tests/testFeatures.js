@@ -20,7 +20,7 @@ export default function testBrowserFeatures() {
 
 	for (const requisite of requisites) {
 		feature.extend(requisite, function () {
-			console.log(requisite);
+			// console.log(requisite);
 			if (requisite in window) {
 				return true;
 			}

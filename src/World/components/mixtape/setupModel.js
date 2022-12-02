@@ -1,4 +1,15 @@
-import {AnimationMixer, MathUtils} from "three";
+import {
+	AnimationMixer,
+	MathUtils,
+	BoxHelper,
+	Box3,
+	Object3D,
+	Material,
+	MeshBasicMaterial,
+	SphereGeometry,
+	Mesh,
+	BoxGeometry,
+} from "three";
 
 function setupModel(data) {
 	const model = data.scene.children[0];
@@ -36,7 +47,7 @@ function setupModel(data) {
 		};
 	}
 
-	model.position.y = 0.05;
+	// model.position.y = 0.05;
 
 	const radiansPerSecond = MathUtils.degToRad(2);
 
@@ -45,9 +56,11 @@ function setupModel(data) {
 
 		// Little statup Animation
 		if (model.rotation.x <= MathUtils.degToRad(4.1)) {
-			model.rotation.z += radiansPerSecond * delta;
-			model.rotation.x += radiansPerSecond * delta;
-			model.rotation.y += radiansPerSecond * delta;
+			// model.rotation.z += radiansPerSecond * delta;
+			// model.rotation.x += radiansPerSecond * delta;
+			// model.rotation.y += radiansPerSecond * delta;
+			// console.log(model.helper);
+			// model.helper.update();
 		}
 	};
 
