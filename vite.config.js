@@ -157,6 +157,10 @@ export default defineConfig({
 					protocol: "web+mixtape",
 					url: "/",
 				},
+				{
+					protocol: "#mixtape",
+					url: "/",
+				},
 				// {
 				// 	protocol: "web+coffee",
 				// 	url: "/coffee?type=%s",

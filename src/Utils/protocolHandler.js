@@ -1,5 +1,4 @@
 function registerProtocolHandler() {
-	console.log(`${window.location.origin}/?mixtape=%s`);
 	if (navigator.registerProtocolHandler) {
 		navigator.registerProtocolHandler(
 			"web+mixtape",
