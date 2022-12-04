@@ -9,13 +9,13 @@ function onMouseInAnimation(camera) {
 		.to(
 			{
 				x: 0.0,
-				y: -0.08,
-				z: 0.46,
+				y: 0.0,
+				z: 0.5,
 			},
 			800
 		)
 		.easing(TWEEN.Easing.Quadratic.InOut)
-		.delay(200)
+		// .delay(200)
 		.start();
 }
 

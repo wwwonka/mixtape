@@ -17,32 +17,6 @@ async function main() {
 	disableDevTools();
 	registerProtocolHandler();
 
-	document.addEventListener(
-		"DOMContentLoaded",
-		(event) => {
-			console.log(
-				"This is only a test to see how quick Cloudflare Pages build and take time propagate"
-			);
-			console.log("CURRENT_TIME", new Date());
-			// we can move only if we are not in a browser's tab
-			let isBrowser = matchMedia("(display-mode: browser)").matches;
-			if (!isBrowser) {
-				window.moveTo(
-					window.screen.availWidth / 2,
-					window.screen.availHeight / 2
-				);
-				window.resizeTo(800, 600);
-			}
-			setTimeout(() => {
-				window.resizeTo(
-					window.screen.availWidth / 2,
-					window.screen.availHeight / 2
-				);
-			});
-		},
-		500
-	);
-
 	// testBrowserFeatures();
 	// listenKeyboardShorcuts();
 	// Get a reference to the container element

@@ -55,7 +55,7 @@ export default defineConfig({
 				registerType: "autoUpdate",
 				injectRegister: "inline",
 				outDir: "../build/",
-				// manifestFilename: "manifest.webmanifest",
+				manifestFilename: "manifest.json",
 				includeAssets: ["/icons/screenshot.jpg"],
 				workbox: {
 					globDirectory: "../build/",
@@ -132,22 +132,40 @@ export default defineConfig({
 				shortcuts: [
 					{
 						name: "Create new mixtape",
-						// short_name: "New mixtape",
+						short_name: "Create new",
 						url: "/#create",
+						description: "Create a brand new mixtape from scratch",
+						icons: [
+							{
+								src: "/icons/pwa-shortcuts/shortcut-96x96.png",
+								sizes: "96x96",
+							},
+						],
 					},
 					{
-						name: "Mixtape Collection",
+						name: "Mixtape Library",
+						short_name: "Library",
 						url: "/#collection",
-						// icons: {
-						// 	src: "/icons/pwa-shortcuts/shortcut-96x96.jpg",
-						// 	sizes: "512x512",
-						// 	type: "image/jpg",
-						// },
+						description: "View your entire mixtape library",
+						icons: [
+							{
+								src: "/icons/pwa-shortcuts/shortcut-96x96.png",
+								sizes: "96x96",
+							},
+						],
 					},
 					{
-						name: "Reveal offline mixtapes in the Finder",
-						// short_name: "Offline mixtapes",
+						name: "Downloaded files",
+						short_name: "Files",
 						url: "/#downloaded",
+						description:
+							"Reveal offline mixtapes in the File System",
+						icons: [
+							{
+								src: "/icons/pwa-shortcuts/shortcut-96x96.png",
+								sizes: "96x96",
+							},
+						],
 					},
 				],
 			},
@@ -157,10 +175,10 @@ export default defineConfig({
 					protocol: "web+mixtape",
 					url: "/",
 				},
-				{
-					protocol: "#mixtape",
-					url: "/",
-				},
+				// {
+				// 	protocol: "#mixtape",
+				// 	url: "/",
+				// },
 				// {
 				// 	protocol: "web+coffee",
 				// 	url: "/coffee?type=%s",

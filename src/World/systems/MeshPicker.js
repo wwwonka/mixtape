@@ -48,14 +48,21 @@ class MeshPicker {
 						this.intersectedObject.parent.onMouseIn();
 						this.camera.onMouseIn();
 					}
+
+					if (this.intersectedObject) {
+						// console.log(this.on);
+					}
 				} else {
 					if (hasIntersected) {
-						console.log("Out of pickable mesh");
+						// console.log("Out of pickable mesh");
 						hasIntersected = false;
 						document.body.classList.remove("pointer");
 						this.intersectedObject.parent.onMouseOut();
 						this.camera.onMouseOut();
 						this.intersectedObject = null;
+					}
+
+					if (this.intersectedObject === null) {
 					}
 				}
 				this.pickableObjects.forEach((object, intersected) => {

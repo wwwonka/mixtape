@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <!-- <meta http-equiv="content-security-policy" content="default-src https:"> -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover, user-scalable=0">
+    <!-- <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover, user-scalable=0"> -->
+    <meta name="viewport" content="width=device-width">
+
     <title>#mixtape</title>
     <!-- <title>&lrm;</title> -->
     <meta name="description" content="A so-called 'social experiment' around analogical mixtapes">
     <meta name="author" content="wwwonka">
+
+    <link rel="canonical" href="https://mixtape.wwwonka.com/" />
 
     <!-- <link rel="icon" href="icons/favicon.ico" type="image/x-icon"> -->
     <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
@@ -28,7 +32,7 @@
     <link rel="apple-touch-icon" href="icons/ios-icon/ios.png" sizes="180x180">
 
     <!-- Meta --- https://ogp.me/ -->
-    <!-- Linking og:url to a gif will show animated thumbnail when people share on FB-->
+    <!-- Linking og:url to a gif will show animated thumbnail when people share on FB -->
     <meta property="og:url" content="https://mixtape.wwwonka.com/icons/pwa-misc/screenrecording.gif" />
     <!-- <meta property="og:url" content="https://mixtape.wwwonka.com/" /> -->
     <meta property="og:title" content="#mixtape" />
@@ -56,11 +60,16 @@
     <link rel="stylesheet" href="styles/pwa-title-bar.css" type="text/css">
     <link rel="stylesheet" href="styles/cursor.css" type="text/css">
 
-    <script type="module" src="main.js"></script>
+    <script defer type="module" src="main.js"></script>
 
 </head>
 
 <body oncontextmenu="return false">
+
+    <audio hidden title="DEV_HTML_TITLE" id="song">
+        <source src="audio/raingod.mp3" type="audio/mpeg">
+        <!-- <source src="/media/epic.wav" type="audio/wav"> -->
+    </audio>
 
     <div class="pwa-title-bar"></div>
 

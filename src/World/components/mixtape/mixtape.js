@@ -7,12 +7,7 @@ import {TWEEN} from "@tweenjs/tween.js/dist/tween.umd";
 import {setupModel} from "./setupModel.js";
 
 async function loadMixtape() {
-	// const dracoLoader = new DRACOLoader();
 	const loader = new GLTFLoader();
-
-	// dracoLoader.setDecoderPath("../../../Utils/loaders/draco/");
-
-	// loader.setDRACOLoader(dracoLoader);
 
 	const [mixtapeData] = await Promise.all([
 		loader.loadAsync("models/mixtape_dummy.glb"),
@@ -20,8 +15,7 @@ async function loadMixtape() {
 
 	const mixtape = setupModel(mixtapeData);
 
-	console.log(mixtape);
-
+	// Define all interactions
 	mixtape.onMouseIn = () => {
 		onMouseInAnimation(mixtape);
 	};
