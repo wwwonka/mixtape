@@ -15,6 +15,8 @@ async function loadMixtape() {
 
 	const mixtape = setupModel(mixtapeData);
 
+	console.log(mixtape);
+
 	// Define all interactions
 	mixtape.onMouseIn = () => {
 		onMouseInAnimation(mixtape);

@@ -2,7 +2,7 @@
 import {MathUtils} from "three";
 
 const initialScale = {x: 100, y: 100, z: 110};
-let initialRotation = {x: null, y: null, z: null};
+let initialRotation = {x: 0, y: 0, z: 0};
 let camera;
 
 function onMouseInAnimation(model) {
@@ -67,11 +67,11 @@ function onMouseOutAnimation(model) {
 	const rotateToInitialValue = new TWEEN.Tween(model.rotation) // Create a new tween that modifies 'coords'.
 		.to(
 			{
-				x: initialRotation.x,
-				y: initialRotation.y,
-				z: initialRotation.z,
+				x: 0,
+				y: 0,
+				z: 0,
 			},
-			1000
+			6000
 		) // Move to (300, 200) in 1 second.
 		.easing(TWEEN.Easing.Quadratic.In) // Use an easing function to make the animation smooth.
 		.start(); // Start the tween immediately.

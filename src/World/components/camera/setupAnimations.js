@@ -1,11 +1,19 @@
 let initialPosition = {x: null, y: null, z: null};
 
-function onMouseInAnimation(camera) {
-	initialPosition.x = camera.position.x;
-	initialPosition.y = camera.position.y;
-	initialPosition.z = camera.position.z;
+let hasPlayed = false;
 
-	const lookAtModel = new TWEEN.Tween(camera.position)
+let lookAtModel;
+let releaseModel;
+
+function onMouseInAnimation(camera) {
+	if (!hasPlayed) {
+		initialPosition.x = camera.position.x;
+		initialPosition.y = camera.position.y;
+		initialPosition.z = camera.position.z;
+		hasPlayed = true;
+	}
+
+	lookAtModel = new TWEEN.Tween(camera.position)
 		.to(
 			{
 				x: 0.0,
@@ -20,17 +28,24 @@ function onMouseInAnimation(camera) {
 }
 
 function onMouseOutAnimation(camera) {
-	const lookAtModel = new TWEEN.Tween(camera.position)
+	// hasPlayed = false;
+	releaseModel = new TWEEN.Tween(camera.position)
 		.to(
 			{
-				x: initialPosition.x,
-				y: initialPosition.y,
-				z: initialPosition.z,
+				// x: initialPosition.x,
+				// y: initialPosition.y,
+				// z: initialPosition.z,
+				x: -0.205,
+				y: -0.246,
+				z: 0.46,
 			},
-			1500
+			1200
 		)
 		.easing(TWEEN.Easing.Cubic.Out)
 		.start();
+	// console.log(initialPosition.x);
+
+	// lookAtModel.start();
 }
 
 export {onMouseInAnimation, onMouseOutAnimation};
