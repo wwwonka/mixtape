@@ -1,4 +1,4 @@
-import {Mesh, Object3D, Raycaster} from "three";
+import {Raycaster} from "three";
 
 class MeshPicker {
 	constructor(camera, scene, renderer) {
@@ -7,12 +7,15 @@ class MeshPicker {
 		this.camera = camera;
 		this.scene = scene;
 		this.renderer = renderer;
+
+		this.light;
 	}
 
 	enable() {
 		const raycaster = new Raycaster();
 		let intersects = [];
 		let hasIntersected = false;
+		let hasExit = false;
 
 		document.addEventListener(
 			"mousemove",
@@ -43,24 +46,32 @@ class MeshPicker {
 					// This is called once
 					if (!hasIntersected) {
 						hasIntersected = true;
+						hasExit = false;
+
 						document.body.classList.add("pointer");
 						this.intersectedObject = intersects[0].object;
 
 						this.intersectedObject.parent.onMouseIn();
 						this.camera.onMouseIn();
-					}
-
-					if (this.intersectedObject) {
-						// console.log(this.on);
+						// this.scene.getObjectByName("mainLight").onMouseIn();
+						console.log("!");
+						// this.scene
+						// 	.getObjectByName("mainLight")
+						// 	.lookAt(this.intersectedObject.parent);
 					}
 				} else {
 					if (hasIntersected) {
-						// console.log("Out of pickable mesh");
+						if (!hasExit) {
+							hasExit = true;
+							document.body.classList.remove("pointer");
+							this.camera.onMouseOut();
+							this.scene
+								.getObjectByName("mainLight")
+								.onMouseOut();
+							console.log("!!");
+							this.intersectedObject.parent.onMouseOut();
+						}
 						hasIntersected = false;
-						document.body.classList.remove("pointer");
-
-						// this.intersectedObject.parent.onMouseOut();
-						this.camera.onMouseOut();
 
 						this.intersectedObject = null;
 					}

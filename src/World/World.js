@@ -51,6 +51,8 @@ class World {
 
 		meshPicker.enable();
 
+		// mixtape.add(mainLight);
+
 		scene.add(mixtape);
 	}
 

@@ -23,7 +23,6 @@ function onMouseInAnimation(camera) {
 			800
 		)
 		.easing(TWEEN.Easing.Quadratic.InOut)
-		// .delay(200)
 		.start();
 }
 
@@ -32,12 +31,12 @@ function onMouseOutAnimation(camera) {
 	releaseModel = new TWEEN.Tween(camera.position)
 		.to(
 			{
-				// x: initialPosition.x,
-				// y: initialPosition.y,
-				// z: initialPosition.z,
-				x: -0.205,
-				y: -0.246,
-				z: 0.46,
+				x: initialPosition.x,
+				y: initialPosition.y,
+				z: initialPosition.z,
+				// x: -0.205,
+				// y: -0.246,
+				// z: 0.46,
 			},
 			1200
 		)
