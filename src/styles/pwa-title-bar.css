@@ -14,6 +14,6 @@
 	app-region: drag;
 }
 
-.hidden {
+.pwa-title-bar .hidden {
 	display: none;
 }
