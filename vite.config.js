@@ -4,7 +4,8 @@ import {threeMinifier} from "@yushijinhun/three-minifier-rollup";
 import {ViteMinifyPlugin} from "vite-plugin-minify";
 import {VitePWA} from "vite-plugin-pwa";
 import mkcert from "vite-plugin-mkcert";
-// import manifest from "./src/PWA/manifest.json";
+import {terser} from "rollup-plugin-terser";
+import cleanup from "rollup-plugin-cleanup";
 
 export default defineConfig({
 	root: "src/", // index.html goes inside src/ folder
@@ -14,30 +15,40 @@ export default defineConfig({
 		assetsDir: "scripts/",
 		emptyOutDir: true,
 		chunkSizeWarningLimit: 10485760,
+		// assetsInlineLimit: 4096, // 4kb
+		rollupOptions: {
+			plugins: [
+				terser({
+					compress: {
+						defaults: false,
+						drop_console: true,
+					},
+					mangle: {
+						eval: true,
+						module: true,
+						toplevel: true,
+						safari10: true,
+						properties: false,
+					},
+					output: {
+						comments: false,
+						ecma: "2020",
+					},
+				}),
+			],
+		},
 	},
 	server: {
 		host: "0.0.0.0",
 		port: "8080",
 		https: true,
 	},
-	/* ---- Netlify Proxy ------------------------------------------------
-		This proxy rule will ensure that every fetch made to "/api/..."
-		is automatically redirected to the Netlify functions server.
-		* Had to comment out ::1 localhost in /etc/hosts to get it working
-		Solution found here: https://github.com/vitejs/vite/issues/2571 
-	*/
-	proxy: {
-		"/api": {
-			target: "http://localhost:8888/.netlify/functions",
-			changeOrigin: true,
-			rewrite: (path) => path.replace(/^\/api/, ""),
-		},
-	},
-	// //------------------------------------------------------------------------
 
 	plugins: [
 		{...threeMinifier(), enforce: "pre"},
-		ViteMinifyPlugin({}),
+		ViteMinifyPlugin({
+			comments: false,
+		}),
 		VitePWA({
 			registerType: "autoUpdate",
 			injectRegister: "inline",
@@ -175,19 +186,12 @@ export default defineConfig({
 					protocol: "web+mixtape",
 					url: "/",
 				},
-				// {
-				// 	protocol: "#mixtape",
-				// 	url: "/",
-				// },
-				// {
-				// 	protocol: "web+coffee",
-				// 	url: "/coffee?type=%s",
-				// },
 			],
 			prefer_related_applications: false,
 		}),
 		mkcert({
 			hosts: ["localhost", "local ip addrs", "macbook.local"],
 		}),
+		cleanup(),
 	],
 });

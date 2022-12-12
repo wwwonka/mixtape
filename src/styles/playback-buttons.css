@@ -73,7 +73,17 @@ button:focus {
 	box-shadow: 0px -6px 10px rgba(255, 255, 255, 1),
 		0px 4px 15px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
+	/* max-height: 10vh; */
+	/* max-width: 10vh; */
+
+	/* This will reveal the button when page loads */
+	transform: scale(1.2, 1.2) translate(0, 0);
 }
+.ui-container .btn.hide {
+	transform: scale(0, 0) translate(0, 50vh);
+}
+/* ////////////////////////////////////////// */
+
 .ui-container .btn:after {
 	content: "";
 	position: absolute;

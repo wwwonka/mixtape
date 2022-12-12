@@ -3,13 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
-    <!-- <meta http-equiv="content-security-policy" content="default-src https:"> -->
-    <!-- <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover, user-scalable=0"> -->
-    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 
     <title>#mixtape</title>
-    <!-- <title>&lrm;</title> -->
     <meta name="description" content="A so-called 'social experiment' around analogical mixtapes">
     <meta name="author" content="wwwonka">
 
@@ -64,11 +62,14 @@
 
 </head>
 
-<body oncontextmenu="return false">
+<body id="body" oncontextmenu="return false">
 
-    <audio hidden title="DEV_HTML_TITLE" id="song">
+    <!-- <audio hidden id="play-fx">
+        <source src="audio/cassette-play.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <audio hidden id="song">
         <source src="audio/raingod.mp3" type="audio/mpeg">
-        <!-- <source src="/media/epic.wav" type="audio/wav"> -->
     </audio>
 
     <div class="pwa-title-bar"></div>
@@ -77,9 +78,9 @@
         <!-- Our <canvas> will be inserted here -->
     </div>
 
-    <div class="ui-container">
+    <div class="ui-container ">
 
-        <button title="play-pause" class="btn play-pause">
+        <button title="play-pause" class="btn play-pause hide" id="play-button">
             <div class="icon-container">
                 <svg class="icon play">
                     <use xlink:href="#play"></use>
