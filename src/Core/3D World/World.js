@@ -74,7 +74,7 @@ class World {
 		// 	mixtape.getObjectByName("mixtape_body")
 		// );
 
-		// mixtape.add(mainLight);
+		// mixtape.add(this.lights.pointLight);
 
 		this.scene.add(mixtape);
 

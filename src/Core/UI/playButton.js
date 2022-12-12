@@ -5,7 +5,7 @@ let btn = document.querySelector('[title="play-pause"]');
 
 const song = document.getElementById("song");
 const btnSound = new Howl({
-	src: ["audio/cassette-play.wav"],
+	src: ["audio/cassette-play.mp3"],
 	autoplay: false,
 	preload: true,
 	// autoplay: false,

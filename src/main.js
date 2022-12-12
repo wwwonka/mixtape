@@ -3,11 +3,6 @@ import {World} from "./Core/3D World/World.js";
 import TWEEN from "@tweenjs/tween.js";
 
 async function main() {
-	// document.getElementById("body").addEventListener("touchstart", (e) => {
-	// 	e.preventDefault();
-	// 	e.stopPropagation();
-	// });
-
 	preventInstallPrompt();
 	displayPwaTitleBar();
 
