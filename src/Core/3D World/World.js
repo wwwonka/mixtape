@@ -32,7 +32,8 @@ class World {
 		this.meshPicker = new MeshPicker(
 			this.camera,
 			this.scene,
-			this.renderer
+			this.renderer,
+			container
 		);
 
 		container.append(this.renderer.domElement);

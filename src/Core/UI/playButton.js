@@ -1,23 +1,20 @@
 import {Howl, Howler} from "howler";
 
 let btn = document.querySelector('[title="play-pause"]');
-// let hasClicked = false;
+let mixtape;
 
 const song = document.getElementById("song");
 const btnSound = new Howl({
 	src: ["audio/cassette-play.mp3"],
-	autoplay: false,
+	// autoplay: false,
 	preload: true,
 	// autoplay: false,
 	// rate: 0.5,
 });
 
-// const btnSound2 = new Audio("./audio/cassette-play.wav");
-// const btnSound = document.getElementById("play-fx");
-
 function clickHandler() {
+	mixtape = world.scene.getObjectByName("mixtape");
 	// If button is active, PAUSE icon will display on button
-
 	btn.classList.toggle("active");
 
 	// Set Media Session stuff
@@ -32,7 +29,7 @@ function clickHandler() {
 		PAUSE();
 	}
 }
-function setPlayButton() {
+function setPlayButton(world) {
 	btn.addEventListener("click", clickHandler, true);
 	return btn;
 }
@@ -43,7 +40,7 @@ function PLAY() {
 	}
 	btnSound.play();
 	song.play();
-	// setTimeout(() => song.play(), 600);
+	mixtape.playAnim();
 }
 
 function PAUSE() {
@@ -52,40 +49,40 @@ function PAUSE() {
 	}
 	btnSound.play();
 	song.pause();
+	mixtape.pauseAnim();
 }
 
 function setMediaSessionActions() {
-	// console.log("Setting Up Media Session...");
-	const mixtape = world.scene.getObjectByName("mixtape");
+	mixtape = world.scene.getObjectByName("mixtape");
 
 	const actionHandlers = [
 		[
 			"play",
 			() => {
 				btn.classList.add("active");
-				mixtape.playAnim();
+				// mixtape.playAnim();
 				PLAY();
+				setMediaSessionActions();
 			},
 		],
 		[
 			"pause",
 			() => {
-				// console.log("PAUSE FROM MEDIA SESSION");
 				btn.classList.remove("active");
 				PAUSE();
+				setMediaSessionActions();
+			},
+		],
+		[
+			"stop",
+			() => {
+				btn.classList.remove("active");
+				PAUSE();
+				song.currentTime = 0;
 				mixtape.pauseAnim();
 				setMediaSessionActions();
 			},
 		],
-		// [
-		// 	"stop",
-		// 	() => {
-		// 		btn.classList.remove("active");
-		// 		song.pause();
-		// 		// song.currentTime = 0;
-		// 		/* ... */
-		// 	},
-		// ],
 		// [
 		// 	"previoustrack",
 		// 	() => {
@@ -151,7 +148,7 @@ function setMediaSessionMetadata() {
 		navigator.mediaSession.metadata = new MediaMetadata({
 			title: "TITLE",
 			artist: "ARTIST",
-			album: "ALBUM",
+			// album: "ALBUM",
 			artwork: [
 				{
 					src: "icons/media-session/96.png",

@@ -68,11 +68,13 @@ function displayPwaTitleBar() {
 		if (navigator.windowControlsOverlay.visible) {
 			console.log("window control overlay visible");
 			// The window controls overlay is visible in the title bar area.
+			document.getElementsByClassName("pwa-title-bar")[0].style.display =
+				"default";
 		} else {
 			console.log("window control overlay not visible");
 			console.log(document.getElementsByClassName("pwa-title-bar")[0]);
-			document.getElementsByClassName("pwa-title-bar")[0].style.display =
-				"none";
+			// document.getElementsByClassName("pwa-title-bar")[0].style.display =
+			// 	"default";
 		}
 		// document.getElementById("pwa-title-bar").style.display = "default";
 	}

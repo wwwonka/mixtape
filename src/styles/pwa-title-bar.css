@@ -1,13 +1,14 @@
 .pwa-title-bar {
 	margin: 0;
 	position: fixed;
-	background-color: #f2f2f2;
-	/* background-color: black; */
+	/* background-color: #f2f2f2; */
+	background-color: black;
 	left: env(titlebar-area-x, 0);
 	top: env(titlebar-area-y, 0);
 	width: env(titlebar-area-width, 100%);
 	height: env(title-bar-area-height, 33px);
 	z-index: 100;
+	display: none;
 
 	/* Make all the div draggable */
 	-webkit-app-region: drag;

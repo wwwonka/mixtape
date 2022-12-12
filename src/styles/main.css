@@ -1,8 +1,8 @@
-/* This will prevent zooming on mobile https://stackoverflow.com/questions/4472891/how-can-i-disable-zoom-on-a-mobile-web-page */
 :root,
 * {
-	touch-action: pan-x pan-y;
-	/* height: 100%; */
+	/* This will prevent zooming on mobile https://stackoverflow.com/questions/4472891/how-can-i-disable-zoom-on-a-mobile-web-page */
+	touch-action: manipulation;
+	scrollbar-width: none;
 }
 /*===============================================*/
 
@@ -41,6 +41,13 @@ body {
 
 	/* color text */
 	/* color: rgb(175, 175, 175); */
+
+	/*disable scrollbar in firefox */
+}
+
+/* hide scrollbars without impacting scrolling https://blog.logrocket.com/hide-scrollbar-without-impacting-scrolling-css/ */
+body::-webkit-scrollbar {
+	display: none;
 }
 
 h1 {

@@ -27,15 +27,19 @@ function setupModel(data) {
 	action.play();
 	action.paused = true;
 
-	let btn = document.querySelector('[title="play-pause"]');
+	// let btn = document.querySelector('[title="play-pause"]');
 
-	btn.onclick = () => {
-		if (btn.classList.contains("active")) {
-			model.playAnim();
-		} else {
-			action.halt(0.75);
-		}
-	};
+	// btn.onclick = () => {
+	// 	// if (btn.classList.contains("active")) {
+	// 	// 	console.log("!");
+	// 	// }
+
+	// 	if (btn.classList.contains("active")) {
+	// 		// model.playAnim();
+	// 	} else {
+	// 		action.halt(0.75);
+	// 	}
+	// };
 
 	const radiansPerSecond = MathUtils.degToRad(2);
 

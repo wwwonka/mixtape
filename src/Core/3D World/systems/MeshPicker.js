@@ -1,26 +1,24 @@
 import {Raycaster} from "three";
 
 let pointerDown = false;
-let pointerUp = false;
+
 let supportsTouch = "ontouchstart" in window || navigator.msMaxTouchPoints;
 
 let intersectedObject = null;
+let intersects = [];
 
 class MeshPicker {
-	constructor(camera, scene, renderer) {
+	constructor(camera, scene, renderer, container) {
 		this.pickableObjects = [];
 		this.intersectedObject = null;
 		this.camera = camera;
 		this.scene = scene;
 		this.renderer = renderer;
-
-		this.light;
+		this.container = container;
 	}
 
 	async enable() {
 		const raycaster = new Raycaster();
-
-		let intersects = [];
 
 		let hasIntersected = false;
 		let hasExit = false;
@@ -30,16 +28,17 @@ class MeshPicker {
 			world.controls.enabled = true;
 		}
 		// ...And when user touches the scene container, play the animation
-		document.getElementById("scene-container").addEventListener(
+		this.container.addEventListener(
 			"touchstart",
 			(event) => {
 				this.scene.getObjectByName("mixtape").onMouseIn();
 			},
 			false
 		);
+		///////////////////////
 
-		// Otherwise, change behviour for mouse
-		document.addEventListener(
+		// Otherwise, change behviour for mouse (desktop)
+		this.container.addEventListener(
 			"pointermove",
 			(event) => {
 				// Set the Raycaster
@@ -69,13 +68,15 @@ class MeshPicker {
 				if (intersects.length > 0) {
 					// Everything in this conditional block
 					// will be called once only:
-
 					if (!hasIntersected) {
 						hasIntersected = true;
 						hasExit = false;
 
 						// Change cursor style to signify model can be rotated
-						document.body.style.cursor = "grab";
+						if (!pointerDown) {
+							document.body.style.cursor = "grab";
+						}
+
 						this.intersectedObject = intersects[0].object;
 						intersectedObject = this.intersectedObject;
 
@@ -84,27 +85,15 @@ class MeshPicker {
 						world.controls.enabled = true;
 
 						this.addPointerEventListeners();
-
-						// this.intersectedObject.parent.onMouseIn();
-						// this.scene.getObjectByName("mainLight").onMouseIn();
-						// this.scene
-						// 	.getObjectByName("mainLight")
-						// 	.lookAt(this.intersectedObject.parent);
 					}
 				} else {
 					if (hasIntersected) {
 						if (!hasExit) {
 							console.log("The mesh is outside the cursor");
-							this.removePointerEventListeners(
-								this.intersectedObject
-							);
-							document.body.style.cursor = "default";
-							// this.camera.onMouseOut();
-							// this.scene
-							// 	.getObjectByName("mainLight")
-							// 	.onMouseOut();
-							// console.log("!!");
-							// this.intersectedObject.parent.onMouseOut();
+
+							if (!pointerDown) {
+								document.body.style.cursor = "default";
+							}
 						}
 						hasIntersected = false;
 
@@ -114,25 +103,11 @@ class MeshPicker {
 					if (this.intersectedObject === null) {
 					}
 				}
-				this.pickableObjects.forEach((object, intersected) => {
-					// if (
-					// 	intersectedObject &&
-					// 	intersectedObject.name === o.name
-					// ) {
-					// 	console.log("hey hey");
-					// 	// pickableObjects[i].material = highlightedMaterial;
-					// } else {
-					// 	console.log("ho ho");
-					// 	// pickableObjects[i].material = originalMaterials[o.name];
-					// }
-				});
+				// this.pickableObjects.forEach((object, intersected) => {
+				// });
 			},
 			false
 		);
-	}
-
-	test() {
-		console.log("TEST");
 	}
 
 	addPointerEventListeners() {
@@ -149,15 +124,24 @@ class MeshPicker {
 
 function pointerDownHandler() {
 	console.log("Pointer down");
+	pointerDown = true;
+
 	document.body.style.cursor = "grabbing";
 
-	pointerDown = true;
 	intersectedObject.parent.onMouseIn();
 }
 
 function pointerUpHandler() {
 	console.log("Pointer up");
-	document.body.style.cursor = "grab";
+	pointerDown = false;
+
+	if (intersects.length === 0) {
+		console.log("nothing under");
+		document.body.style.cursor = "default";
+	} else {
+		console.log("something under");
+		document.body.style.cursor = "grab";
+	}
 
 	// setTimeout(() => {
 	// 	intersectedObject.parent.onMouseOut();
