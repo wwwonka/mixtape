@@ -3,10 +3,6 @@ import {World} from "./Core/3D World/World.js";
 import TWEEN from "@tweenjs/tween.js";
 
 async function main() {
-	setTimeout(() => {
-		playButton.classList.remove("hide");
-	}, 1000);
-
 	// document.getElementById("body").addEventListener("touchstart", (e) => {
 	// 	e.preventDefault();
 	// 	e.stopPropagation();
@@ -30,6 +26,10 @@ async function main() {
 	world.start();
 
 	const playButton = setPlayButton(world);
+
+	setTimeout(() => {
+		playButton.classList.remove("hide");
+	}, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {});
