@@ -26,6 +26,7 @@ class MeshPicker {
 		// If touch is supported, enable orbit controls right away
 		if (supportsTouch) {
 			world.controls.enabled = true;
+			// ...And when user touches the scene container, play the animation
 			this.container.addEventListener(
 				"touchstart",
 				(event) => {
@@ -34,10 +35,7 @@ class MeshPicker {
 				false
 			);
 		} else {
-			// ...And when user touches the scene container, play the animation
-
 			///////////////////////
-
 			// Otherwise, change behviour for mouse (desktop)
 			this.container.addEventListener(
 				"pointermove",
@@ -150,14 +148,6 @@ function pointerUpHandler() {
 		console.log("something under");
 		document.body.style.cursor = "grab";
 	}
-
-	// setTimeout(() => {
-	// 	intersectedObject.parent.onMouseOut();
-	// }, 500);
-}
-
-function process_touchstart() {
-	console.log("touched");
 }
 
 export {MeshPicker};
