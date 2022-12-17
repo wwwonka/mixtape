@@ -1,6 +1,7 @@
 import {Howl, Howler} from "howler";
 
-let btn = document.querySelector('[title="play-pause"]');
+// let btn = document.querySelector('[title="play-pause"]');
+let btn = document.getElementById("play-button");
 let mixtape;
 
 const song = document.getElementById("song");
@@ -93,26 +94,26 @@ function setMediaSessionActions() {
 		// 	},
 		// ],
 		// ["nexttrack", null],
-		// [
-		// 	"seekbackward",
-		// 	(details) => {
-		// 		const skipTime = details.seekOffset || defaultSkipTime;
-		// 		song.currentTime = Math.min(
-		// 			song.currentTime - skipTime,
-		// 			song.duration
-		// 		);
-		// 	},
-		// ],
-		// [
-		// 	"seekforward",
-		// 	(details) => {
-		// 		const skipTime = details.seekOffset || defaultSkipTime;
-		// 		song.currentTime = Math.min(
-		// 			song.currentTime + skipTime,
-		// 			song.duration
-		// 		);
-		// 	},
-		// ],
+		[
+			"seekbackward",
+			(details) => {
+				const skipTime = details.seekOffset || defaultSkipTime;
+				song.currentTime = Math.min(
+					song.currentTime - skipTime,
+					song.duration
+				);
+			},
+		],
+		[
+			"seekforward",
+			(details) => {
+				const skipTime = details.seekOffset || defaultSkipTime;
+				song.currentTime = Math.min(
+					song.currentTime + skipTime,
+					song.duration
+				);
+			},
+		],
 		// [
 		// 	"seekto",
 		// 	(details) => {
@@ -141,6 +142,14 @@ function setMediaSessionActions() {
 			);
 		}
 	}
+
+	song.addEventListener("ended", function () {
+		btn.classList.remove("active");
+		PAUSE();
+		song.currentTime = 0;
+		mixtape.pauseAnim();
+		setMediaSessionActions();
+	});
 }
 
 function setMediaSessionMetadata() {

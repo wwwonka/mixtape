@@ -12,6 +12,8 @@ import {Resizer} from "./systems/Resizer.js";
 import {Loop} from "./systems/Loop.js";
 import {MeshPicker} from "./systems/MeshPicker.js";
 
+// import {setPlayButton} from "../UI/playButton.js";
+
 class World {
 	constructor(container) {
 		this.camera = createCamera();
