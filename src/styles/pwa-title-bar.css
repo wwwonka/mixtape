@@ -1,20 +1,37 @@
 .pwa-title-bar {
 	margin: 0;
 	position: fixed;
-	/* background-color: #f2f2f2; */
-	background-color: black;
+	background-color: #f2f2f2;
+	/* background-color: black; */
 	left: env(titlebar-area-x, 0);
 	top: env(titlebar-area-y, 0);
 	width: env(titlebar-area-width, 100%);
 	height: env(title-bar-area-height, 33px);
 	z-index: 100;
-	display: none;
+	display: default;
 
 	/* Make all the div draggable */
 	-webkit-app-region: drag;
 	app-region: drag;
+} /* It targets only the app used within the browser */
+/* @media (display-mode: browser) {
+	.pwa-title-bar {
+		display: hidden;
+	}
+} */
+/* It targets only the app used with a system icon in standalone mode */
+/* @media (display-mode: standalone) {
+	.pwa-title-bar {
+		display: default;
+	}
+} */
+
+@media (display-mode: window-controls-overlay) {
+	.pwa-title-bar {
+		display: default;
+	}
 }
 
-.pwa-title-bar .hidden {
+.pwa-title-bar.hidden {
 	display: none;
 }

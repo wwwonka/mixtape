@@ -67,7 +67,7 @@ class World {
 		// Move the target to the center of the mixtape
 		this.controls.target = new Vector3(
 			mixtape.position.x,
-			mixtape.position.y - 0.015,
+			mixtape.position.y - 0.012,
 			mixtape.position.z
 		);
 
@@ -87,7 +87,7 @@ class World {
 
 		setTimeout(() => {
 			playButton.classList.remove("hide");
-		}, 300);
+		}, 1200);
 	}
 
 	// Render single frame
