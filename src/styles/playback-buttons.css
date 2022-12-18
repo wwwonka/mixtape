@@ -135,7 +135,7 @@ button:focus {
 	opacity: 0;
 	transform: translate(-50%, 50%);
 }
-.ui-container .btn.volume-control {
+/* .ui-container .btn.volume-control {
 	height: 160px;
 	border-radius: 50px;
 }
@@ -157,4 +157,4 @@ button:focus {
 }
 .ui-container .btn.volume-control .icon.minus {
 	transform: translate(-50%, -50%);
-}
+} */

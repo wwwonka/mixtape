@@ -11,8 +11,9 @@ import {createEffectComposer} from "./systems/effectComposer.js";
 import {Resizer} from "./systems/Resizer.js";
 import {Loop} from "./systems/Loop.js";
 import {MeshPicker} from "./systems/MeshPicker.js";
+import {Vector3} from "three";
 
-// import {setPlayButton} from "../UI/playButton.js";
+import {setPlayButton} from "../UI/playButton.js";
 
 class World {
 	constructor(container) {
@@ -45,8 +46,9 @@ class World {
 		this.lights = createLights();
 		this.scene.add(
 			this.lights.ambientLight,
-			// this.lights.mainLight,
+			this.lights.mainLight,
 			this.lights.pointLight
+			// this.lights.highlightsLight
 		);
 
 		this.loop.updatables.push(this.controls);
@@ -63,7 +65,11 @@ class World {
 		const {mixtape} = await loadMixtape();
 
 		// Move the target to the center of the mixtape
-		this.controls.target.copy(mixtape.position);
+		this.controls.target = new Vector3(
+			mixtape.position.x,
+			mixtape.position.y - 0.015,
+			mixtape.position.z
+		);
 
 		this.loop.updatables.push(mixtape);
 
@@ -73,29 +79,24 @@ class World {
 
 		this.meshPicker.enable();
 
-		// this.composer.objectsToOutline.push(
-		// 	mixtape.getObjectByName("mixtape_body")
-		// );
-
-		// mixtape.add(this.lights.pointLight);
-
 		this.scene.add(mixtape);
 
 		this.lights.mainLight.target = mixtape;
 
-		// console.log(this.composer.passes[1]);
+		const playButton = setPlayButton(this);
 
-		// this.composer.depixelisationTween.start();
+		setTimeout(() => {
+			playButton.classList.remove("hide");
+		}, 300);
 	}
 
 	// Render single frame
 	render() {
 		this.composer.render(this.scene, this.camera);
 		// this.renderer.render(this.scene, this.camera);
-		// this.effectComposer.render();
 	}
 
-	// Animation this.loop
+	// Animation loop
 	start() {
 		this.loop.start();
 	}

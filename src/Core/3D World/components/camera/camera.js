@@ -10,7 +10,6 @@ function createCamera() {
 	);
 
 	// move the camera back so we can view the scene
-	// camera.position.set(-0.205, -0.246, 0.46);
 	camera.position.set(0, 0, 0.46);
 	camera.zoom = 2.63;
 

@@ -9,7 +9,8 @@ function setupModel(data) {
 	model.rotation.x = MathUtils.degToRad(-18.4);
 	model.rotation.y = MathUtils.degToRad(23.4);
 	model.rotation.z = MathUtils.degToRad(-1);
-	model.position.y = 0.05;
+
+	// model.position.y = 0.01;
 
 	// Model Animations
 	const mixer = new AnimationMixer(model);
@@ -27,33 +28,8 @@ function setupModel(data) {
 	action.play();
 	action.paused = true;
 
-	// let btn = document.querySelector('[title="play-pause"]');
-
-	// btn.onclick = () => {
-	// 	// if (btn.classList.contains("active")) {
-	// 	// 	console.log("!");
-	// 	// }
-
-	// 	if (btn.classList.contains("active")) {
-	// 		// model.playAnim();
-	// 	} else {
-	// 		action.halt(0.75);
-	// 	}
-	// };
-
-	const radiansPerSecond = MathUtils.degToRad(2);
-
 	model.tick = (delta) => {
 		mixer.update(delta);
-
-		// Little statup Animation
-		// if (model.rotation.x <= MathUtils.degToRad(4.1)) {
-		// 	// model.rotation.z += radiansPerSecond * delta;
-		// 	// model.rotation.x += radiansPerSecond * delta;
-		// 	// model.rotation.y += radiansPerSecond * delta;
-		// 	// console.log(model.helper);
-		// 	// model.helper.update();
-		// }
 	};
 
 	return model;

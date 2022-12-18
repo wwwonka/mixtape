@@ -7,14 +7,10 @@ let mixtape;
 const song = document.getElementById("song");
 const btnSound = new Howl({
 	src: ["audio/cassette-play.mp3"],
-	// autoplay: false,
 	preload: true,
-	// autoplay: false,
-	// rate: 0.5,
 });
 
 function clickHandler() {
-	mixtape = world.scene.getObjectByName("mixtape");
 	// If button is active, PAUSE icon will display on button
 	btn.classList.toggle("active");
 
@@ -30,8 +26,18 @@ function clickHandler() {
 		PAUSE();
 	}
 }
+
 function setPlayButton(world) {
+	// This will ensure that button is always in focus, thus that the spacebar will always play/pause the song
+	document.body.addEventListener("mousedown", (e) => {
+		e.preventDefault();
+		setMediaSessionActions();
+		setMediaSessionMetadata();
+	});
+	mixtape = world.scene.getObjectByName("mixtape");
 	btn.addEventListener("click", clickHandler, true);
+	// document.addEventListener("keydown", spaceBarDownHandler, true);
+	// document.addEventListener("keyup", spaceBarUpHandler, true);
 	return btn;
 }
 
@@ -55,6 +61,7 @@ function PAUSE() {
 
 function setMediaSessionActions() {
 	mixtape = world.scene.getObjectByName("mixtape");
+	const skipTime = 30; // Time to skip in seconds
 
 	const actionHandlers = [
 		[
@@ -97,7 +104,7 @@ function setMediaSessionActions() {
 		[
 			"seekbackward",
 			(details) => {
-				const skipTime = details.seekOffset || defaultSkipTime;
+				// const skipTime = details.seekOffset || defaultSkipTime;
 				song.currentTime = Math.min(
 					song.currentTime - skipTime,
 					song.duration
@@ -107,7 +114,7 @@ function setMediaSessionActions() {
 		[
 			"seekforward",
 			(details) => {
-				const skipTime = details.seekOffset || defaultSkipTime;
+				// const skipTime = details.seekOffset || defaultSkipTime;
 				song.currentTime = Math.min(
 					song.currentTime + skipTime,
 					song.duration
@@ -143,6 +150,7 @@ function setMediaSessionActions() {
 		}
 	}
 
+	// Stop the mixtape and go back to beginning when the song is over
 	song.addEventListener("ended", function () {
 		btn.classList.remove("active");
 		PAUSE();
@@ -150,6 +158,8 @@ function setMediaSessionActions() {
 		mixtape.pauseAnim();
 		setMediaSessionActions();
 	});
+
+	// Press play-pause button if spacebar is pressed
 }
 
 function setMediaSessionMetadata() {

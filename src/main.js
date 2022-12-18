@@ -1,4 +1,3 @@
-import {setPlayButton} from "./Core/UI/playButton.js";
 import {World} from "./Core/3D World/World.js";
 import TWEEN from "@tweenjs/tween.js";
 
@@ -20,11 +19,11 @@ async function main() {
 	// Start the animation loop
 	world.start();
 
-	const playButton = setPlayButton(world);
+	// const playButton = setPlayButton(world);
 
-	setTimeout(() => {
-		playButton.classList.remove("hide");
-	}, 1000);
+	// setTimeout(() => {
+	// 	playButton.classList.remove("hide");
+	// }, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {});
@@ -72,7 +71,7 @@ function displayPwaTitleBar() {
 				"default";
 		} else {
 			console.log("window control overlay not visible");
-			console.log(document.getElementsByClassName("pwa-title-bar")[0]);
+			// console.log(document.getElementsByClassName("pwa-title-bar")[0]);
 			// document.getElementsByClassName("pwa-title-bar")[0].style.display =
 			// 	"default";
 		}
