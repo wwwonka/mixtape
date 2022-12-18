@@ -97,23 +97,49 @@ if (navigator.standalone === true) {
 	// document.getElementsByClassName("pwa-title-bar")[0].style.display = "none";
 }
 
+const debounce = (func, wait) => {
+	let timeout;
+	return function executedFunction(...args) {
+		const later = () => {
+			clearTimeout(timeout);
+			func(...args);
+		};
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+	};
+};
+
 // See: https://web.dev/window-controls-overlay/
 if ("windowControlsOverlay" in navigator) {
-	navigator.windowControlsOverlay.ongeometrychange = (e) => {
-		console.log("Window control overlay toggle");
+	navigator.windowControlsOverlay.ongeometrychange = debounce((e) => {
+		// console.log("Window control overlay toggle");
 
-		if (displayMode === "standalone") {
-			console.log(displayMode + "!");
+		console.log(navigator.windowControlsOverlay.visible);
+
+		if (!navigator.windowControlsOverlay.visible) {
+			displayMode = "standalone";
+
+			document
+				.getElementsByClassName("pwa-title-bar")[0]
+				.classList.add("hidden");
+		} else {
 			displayMode = "window-controls-overlay";
 			document
 				.getElementsByClassName("pwa-title-bar")[0]
 				.classList.remove("hidden");
-		} else if (displayMode === "window-controls-overlay") {
-			console.log(displayMode);
-			displayMode = "standalone";
-			document
-				.getElementsByClassName("pwa-title-bar")[0]
-				.classList.add("hidden");
 		}
-	};
+		// 	if (!navigator.windowControlsOverlay.visible) {
+		// 		console.log(displayMode + "!");
+		// 		displayMode = "window-controls-overlay";
+		// 		document
+		// 			.getElementsByClassName("pwa-title-bar")[0]
+		// 			.classList.remove("hidden");
+		// 	} else if (navigator.windowControlsOverlay.visible) {
+		// 		console.log(displayMode);
+		// 		displayMode = "standalone";
+		// 		document
+		// 			.getElementsByClassName("pwa-title-bar")[0]
+		// 			.classList.add("hidden");
+		// 	}
+	}, 250);
 }
