@@ -69,7 +69,7 @@ export default defineConfig({
 				manifestFilename: "manifest.json",
 				includeAssets: ["/icons/screenshot.jpg"],
 				workbox: {
-					globDirectory: "../build/",
+					globDirectory: "../assets/",
 					globPatterns: ["/**/*.{js,css,html,ico,png,mp3,glb}"],
 					maximumFileSizeToCacheInBytes: 10485760,
 					navigateFallbackAllowlist: [/^index.html$/],
@@ -80,13 +80,13 @@ export default defineConfig({
 				name: "#mixtape",
 				short_name: "#mixtape",
 				description:
-					"A so-called social 'experiment' around analogical mixtapes.",
+					'A so-called "social experiment" around analogical mixtapes.',
 				dir: "auto",
 				display: "standalone",
 				display_override: [
 					"window-controls-overlay",
 					"standalone",
-					"browser",
+					// "browser",
 				],
 				orientation: "any",
 
@@ -103,24 +103,52 @@ export default defineConfig({
 				],
 				icons: [
 					{
-						src: "/icons/pwa-icon/icon-192x192.png",
+						src: "/icons/pwa-icon/maskable_icon_x48.png",
+						sizes: "48x48",
+						type: "image/png",
+						purpose: "maskable any",
+					},
+					{
+						src: "/icons/pwa-icon/maskable_icon_x72.png",
+						sizes: "72x72",
+						type: "image/png",
+						purpose: "maskable any",
+					},
+					{
+						src: "/icons/pwa-icon/maskable_icon_x96.png",
+						sizes: "96x96",
+						type: "image/png",
+						purpose: "maskable any",
+					},
+					{
+						src: "/icons/pwa-icon/maskable_icon_x128.png",
+						sizes: "128x128",
+						type: "image/png",
+						purpose: "maskable any",
+					},
+					{
+						src: "/icons/pwa-icon/maskable_icon_x192.png",
 						sizes: "192x192",
 						type: "image/png",
+						purpose: "maskable any",
 					},
 					{
-						src: "/icons/pwa-icon/icon-256x256.png",
-						sizes: "256x256",
-						type: "image/png",
-					},
-					{
-						src: "/icons/pwa-icon/icon-384x384.png",
+						src: "/icons/pwa-icon/maskable_icon_x384.png",
 						sizes: "384x384",
 						type: "image/png",
+						purpose: "maskable any",
 					},
 					{
-						src: "/icons/pwa-icon/icon-512x512.png",
+						src: "/icons/pwa-icon/maskable_icon_x512.png",
 						sizes: "512x512",
 						type: "image/png",
+						purpose: "maskable any",
+					},
+					{
+						src: "/icons/pwa-icon/monochrome_icon.png",
+						sizes: "512x512",
+						type: "image/png",
+						purpose: "monochrome",
 					},
 				],
 				screenshots: [

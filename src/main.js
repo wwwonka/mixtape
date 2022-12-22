@@ -112,10 +112,6 @@ const debounce = (func, wait) => {
 // See: https://web.dev/window-controls-overlay/
 if ("windowControlsOverlay" in navigator) {
 	navigator.windowControlsOverlay.ongeometrychange = debounce((e) => {
-		// console.log("Window control overlay toggle");
-
-		console.log(navigator.windowControlsOverlay.visible);
-
 		if (!navigator.windowControlsOverlay.visible) {
 			displayMode = "standalone";
 
@@ -128,18 +124,5 @@ if ("windowControlsOverlay" in navigator) {
 				.getElementsByClassName("pwa-title-bar")[0]
 				.classList.remove("hidden");
 		}
-		// 	if (!navigator.windowControlsOverlay.visible) {
-		// 		console.log(displayMode + "!");
-		// 		displayMode = "window-controls-overlay";
-		// 		document
-		// 			.getElementsByClassName("pwa-title-bar")[0]
-		// 			.classList.remove("hidden");
-		// 	} else if (navigator.windowControlsOverlay.visible) {
-		// 		console.log(displayMode);
-		// 		displayMode = "standalone";
-		// 		document
-		// 			.getElementsByClassName("pwa-title-bar")[0]
-		// 			.classList.add("hidden");
-		// 	}
 	}, 250);
 }
