@@ -1,11 +1,37 @@
 import {World} from "./Core/3D World/World.js";
 import TWEEN from "@tweenjs/tween.js";
+import json from "./data.json";
 
 let displayMode;
 
+window.GLOBALS = {};
+
 async function main() {
+	// Check if there is a hash in URL
+	// https://www.codingem.com/javascript-how-to-parse-url/
+	const url = new URL(window.location.href);
+	const hash = url.search;
+	let parsedHash = hash.replace("?", "");
+
+	// if there is no hash, set parsed hash as undefined
+	if (parsedHash.length === 0) {
+		parsedHash = undefined;
+		console.log("The recipient of this mixtape is", parsedHash + "...");
+	} else {
+		console.log("The recipient of this mixtape should be:", parsedHash);
+	}
+	if (json.hasOwnProperty(parsedHash)) {
+		// console.log(json);
+		console.log("Setting the proper assets to load");
+		GLOBALS = json[parsedHash];
+	} else {
+		console.log("We should load default assets");
+		GLOBALS = json.default;
+	}
+
+	console.log(GLOBALS);
+
 	preventInstallPrompt();
-	// displayPwaTitleBar();
 
 	// Get a reference to the container element
 	const container = document.querySelector("#scene-container");
@@ -21,10 +47,9 @@ async function main() {
 	// Start the animation loop
 	world.start();
 
-	// container.style.filter = "opacity(100%)";
+	document.getElementById("song").src = `audio/${GLOBALS.audio}`;
+	document.getElementById("song").load();
 }
-
-// document.addEventListener("DOMContentLoaded", () => {});
 
 window.onload = main().catch((err) => {
 	console.error(err);
@@ -46,27 +71,6 @@ function preventInstallPrompt() {
 		// showInAppInstallPromotion();
 	});
 }
-
-// function displayPwaTitleBar() {
-// 	if ("windowControlsOverlay" in navigator) {
-// 		// Window Controls Overlay is supported.
-// 		console.log("window control overlay supported");
-
-// 		if (navigator.windowControlsOverlay.visible) {
-// 			console.log("window control overlay visible");
-
-// 			// The window controls overlay is visible in the title bar area.
-// 			document.getElementsByClassName("pwa-title-bar")[0].style.display =
-// 				"default";
-// 		} else {
-// 			console.log("window control overlay not visible");
-// 			// console.log(document.getElementsByClassName("pwa-title-bar")[0]);
-// 			document.getElementsByClassName("pwa-title-bar")[0].style.display =
-// 				"default";
-// 		}
-// 		// document.getElementById("pwa-title-bar").style.display = "default";
-// 	}
-// }
 
 window.addEventListener("DOMContentLoaded", () => {
 	// 1. Lets assume this is a browser tab

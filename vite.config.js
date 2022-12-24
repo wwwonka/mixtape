@@ -15,7 +15,7 @@ export default defineConfig({
 		assetsDir: "scripts/",
 		emptyOutDir: true,
 		chunkSizeWarningLimit: 10485760,
-		// assetsInlineLimit: 4096, // 4kb
+		assetsInlineLimit: 4096, // 4kb
 		rollupOptions: {
 			plugins: [
 				terser({
@@ -56,7 +56,8 @@ export default defineConfig({
 			manifestFilename: "manifest.json",
 			includeAssets: ["/icons/screenshot.jpg"],
 			workbox: {
-				globPatterns: ["../build/**/*.{js,css,html,ico,png,mp3,glb}"],
+				// globPatterns: ["../build/**/*.{js,css,html,ico,png,mp3,glb}"],
+				globPatterns: ["../build/**/*.{js,css,html,ico,png,mp3}"],
 				maximumFileSizeToCacheInBytes: 10485760,
 				navigateFallbackAllowlist: [/^index.html$/],
 			},

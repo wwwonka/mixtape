@@ -1,0 +1,68 @@
+{
+	"default": {
+		"model": "mixtape.glb",
+		"audio": "_default.mp3",
+		"title": "Dear people of the world...",
+		"album": "I miss analogical stuff even though I am from a digital world"
+	},
+	"emiel": {
+		"model": "mixtape_emiel.glb",
+		"audio": "playlist_emiel.mp3",
+		"title": "To: Emiel",
+		"album": "from: "
+	},
+	"yana": {
+		"model": "mixtape_yana.glb",
+		"audio": "playlist_yana.mp3",
+		"title": "Mixtape_01",
+		"album": "Merry christmas, mysterious person..."
+	},
+	"renata": {
+		"model": "mixtape_renata.glb",
+		"audio": "playlist_renata.mp3",
+		"title": "",
+		"album": ""
+	},
+	"chloe": {
+		"model": "mixtape_chloe.glb",
+		"audio": "playlist_chloe.mp3",
+		"title": "",
+		"album": ""
+	},
+	"maman": {
+		"model": "mixtape_maman.glb",
+		"audio": "playlist_maman.mp3",
+		"title": "",
+		"album": ""
+	},
+	"flou": {
+		"model": "mixtape_flou.glb",
+		"audio": "playlist_flou.mp3",
+		"title": "",
+		"album": ""
+	},
+	"elliot": {
+		"model": "mixtape_elliot.glb",
+		"audio": "playlist_elliot.mp3",
+		"title": "",
+		"album": ""
+	},
+	"kat": {
+		"model": "mixtape_kat.glb",
+		"audio": "playlist_kat.mp3",
+		"title": "",
+		"album": ""
+	},
+	"amelie": {
+		"model": "mixtape_amelie.glb",
+		"audio": "playlist_amelie.mp3",
+		"title": "",
+		"album": ""
+	},
+	"celimi": {
+		"model": "mixtape_celimi.glb",
+		"audio": "playlist_celimi.mp3",
+		"title": "",
+		"album": ""
+	}
+}

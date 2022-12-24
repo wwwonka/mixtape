@@ -165,8 +165,8 @@ function setMediaSessionActions() {
 function setMediaSessionMetadata() {
 	if ("mediaSession" in navigator) {
 		navigator.mediaSession.metadata = new MediaMetadata({
-			title: "TITLE",
-			artist: "ARTIST",
+			title: GLOBALS.song,
+			artist: GLOBALS.title,
 			// album: "ALBUM",
 			artwork: [
 				{

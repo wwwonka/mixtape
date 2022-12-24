@@ -1,7 +1,6 @@
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import {DoubleSide} from "three";
 import {onMouseInAnimation, onMouseOutAnimation} from "./setupAnimations.js";
-// import {TWEEN} from "@tweenjs/tween.js/dist/tween.umd";
 
 import {setupModel} from "./setupModel.js";
 
@@ -9,7 +8,7 @@ async function loadMixtape() {
 	const loader = new GLTFLoader();
 
 	const [mixtapeData] = await Promise.all([
-		loader.loadAsync("models/mixtape_dummy.glb"),
+		loader.loadAsync(`models/${GLOBALS.model}`),
 	]);
 
 	const mixtape = setupModel(mixtapeData);
@@ -22,6 +21,8 @@ async function loadMixtape() {
 	mixtape.onMouseOut = () => {
 		onMouseOutAnimation(mixtape);
 	};
+
+	console.log(mixtape);
 
 	//Make mixtape_dummy invisible
 	mixtape.getObjectByName("mixtape_dummy").visible = false;
