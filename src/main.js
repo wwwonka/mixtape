@@ -47,7 +47,15 @@ async function main() {
 	// Start the animation loop
 	world.start();
 
-	document.getElementById("song").src = `audio/${GLOBALS.audio}`;
+	if (isLocalNetwork()) {
+		console.log("Serving large audio file from local network");
+		document.getElementById("song").src = `audio/${GLOBALS.audio}`;
+	} else {
+		console.log("Serving large audio file from the internet");
+		document.getElementById(
+			"song"
+		).src = `https://github.com/wwwonka/mixtape/raw/main/assets/audio/${GLOBALS.audio}`;
+	}
 	document.getElementById("song").load();
 }
 
@@ -129,4 +137,13 @@ if ("windowControlsOverlay" in navigator) {
 				.classList.remove("hidden");
 		}
 	}, 250);
+}
+
+function isLocalNetwork(hostname = window.location.hostname) {
+	return (
+		["localhost", "127.0.0.1", "", "::1"].includes(hostname) ||
+		hostname.startsWith("192.168.") ||
+		hostname.startsWith("10.0.") ||
+		hostname.endsWith(".local")
+	);
 }
