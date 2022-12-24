@@ -25,6 +25,7 @@
 	},
 	"devDependencies": {
 		"@yushijinhun/three-minifier-rollup": "^0.4.0",
+		"find-remove": "^4.1.0",
 		"rollup-plugin-cleanup": "^3.2.1",
 		"vite": "^4.0.3",
 		"vite-plugin-minify": "^1.5.2",

@@ -7,6 +7,17 @@ import mkcert from "vite-plugin-mkcert";
 import {terser} from "rollup-plugin-terser";
 import cleanup from "rollup-plugin-cleanup";
 
+import findRemoveSync from "find-remove";
+
+if (process.env.CF_PAGES) {
+	console.log(
+		"Building for Cloudflare Pages build, removing files of over 25MB in size..."
+	);
+	// remove all large playlists
+	const deletedFiles = findRemoveSync("./assets/audio", {prefix: "playlist"});
+	console.log(deletedFiles);
+}
+
 export default defineConfig({
 	root: "src/", // index.html goes inside src/ folder
 	publicDir: "../assets/", // Relative to the root
