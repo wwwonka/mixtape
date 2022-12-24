@@ -1,4 +1,4 @@
-import {Howl, Howler} from "howler";
+import {Howl} from "howler";
 
 // let btn = document.querySelector('[title="play-pause"]');
 let btn = document.getElementById("play-button");
