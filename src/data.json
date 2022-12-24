@@ -3,66 +3,66 @@
 		"model": "mixtape.glb",
 		"audio": "_default.mp3",
 		"title": "Dear people of the world...",
-		"album": "I miss analogical stuff even though I am from a digital world"
+		"artist": "I miss analogical stuff even though I am from a digital world"
 	},
 	"emiel": {
 		"model": "mixtape_emiel.glb",
 		"audio": "playlist_emiel.mp3",
-		"title": "To: Emiel",
-		"album": "from: "
+		"title": "To: Emiel | From: Santa Claus",
+		"artist": "Merry christmas, dear friend..."
 	},
 	"yana": {
 		"model": "mixtape_yana.glb",
 		"audio": "playlist_yana.mp3",
-		"title": "Mixtape_01",
-		"album": "Merry christmas, mysterious person..."
+		"title": "To: Yana | From: Santa Claus",
+		"artist": "Merry christmas, mysterious person..."
 	},
 	"renata": {
 		"model": "mixtape_renata.glb",
 		"audio": "playlist_renata.mp3",
-		"title": "",
-		"album": ""
+		"title": "To: Renata | From: Santa Claus",
+		"artist": "Merry Christmas, brujita"
 	},
 	"chloe": {
 		"model": "mixtape_chloe.glb",
 		"audio": "playlist_chloe.mp3",
-		"title": "",
-		"album": ""
+		"title": "À Chloé | Du Père-Noël",
+		"artist": "Joyeux noël maudite française! (c'est affectueux 😉)"
 	},
 	"maman": {
 		"model": "mixtape_maman.glb",
 		"audio": "playlist_maman.mp3",
-		"title": "",
-		"album": ""
+		"title": "À maman | Du Père-Noël",
+		"artist": "Joyeux noël mamounette"
 	},
 	"flou": {
 		"model": "mixtape_flou.glb",
 		"audio": "playlist_flou.mp3",
-		"title": "",
-		"album": ""
+		"title": "À Flou | Du Père-Noël",
+		"artist": "Joyeux noël ma soeurette adorée"
 	},
 	"elliot": {
 		"model": "mixtape_elliot.glb",
 		"audio": "playlist_elliot.mp3",
-		"title": "",
-		"album": ""
+		"title": "À Elliot | Du Père-Noël",
+		"artist": "Joyeux noël ma Drag Queen-Psychiatre..."
 	},
 	"kat": {
 		"model": "mixtape_kat.glb",
 		"audio": "playlist_kat.mp3",
-		"title": "",
-		"album": ""
+		"title": "To: Katrina | From: Santa Claus",
+		"artist": "Joyeux noël, vieux crush inavoué..."
 	},
 	"amelie": {
 		"model": "mixtape_amelie.glb",
 		"audio": "playlist_amelie.mp3",
-		"title": "",
-		"album": ""
+		"title": "À Amé | Du Père-Noël",
+		"artist": ""
 	},
 	"celimi": {
 		"model": "mixtape_celimi.glb",
 		"audio": "playlist_celimi.mp3",
-		"title": "",
-		"album": ""
+		"title": "À Céli, Mimi, Lili, Pico, Balou  | Du Père-Noël",
+		"artist": "Joyeux noël, les vieux..."
 	}
 }
