@@ -31,8 +31,10 @@ async function main() {
 
 	console.log(GLOBALS);
 
-	// Change title of the document to title of the mixtape
-	document.title = `${GLOBALS.title}`;
+	// If not default landing page, change title of the document to title of the mixtape
+	if (!GLOBALS.model === "mixtape.glb") {
+		document.title = `${GLOBALS.title}`;
+	}
 
 	preventInstallPrompt();
 
