@@ -15,7 +15,7 @@
 
 			// Project Specifics
 			// "**/dev-dist": true,
-			"dev",
+			// "dev"
 			"README.md": true,
 
 			// These folders will show in their own sections:
@@ -43,7 +43,7 @@
 		},
 
 		// Extensions Settings
-		"glTF.defaultV1Engine": "Three.js",
+		"glTF.defaultV1Engine": "Three.js"
 		// "liveServer.settings.multiRootWorkspaceName": "[Website]"
 	},
 
