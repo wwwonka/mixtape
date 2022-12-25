@@ -8,6 +8,7 @@ const song = document.getElementById("song");
 const btnSound = new Howl({
 	src: ["audio/cassette-play.mp3"],
 	preload: true,
+	volume: 0.65,
 });
 
 function clickHandler() {
@@ -153,7 +154,9 @@ function setMediaSessionActions() {
 	// Stop the mixtape and go back to beginning when the song is over
 	song.addEventListener("ended", function () {
 		btn.classList.remove("active");
-		PAUSE();
+
+		btnSound.play();
+		song.pause();
 		song.currentTime = 0;
 		mixtape.pauseAnim();
 		setMediaSessionActions();

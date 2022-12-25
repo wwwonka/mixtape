@@ -31,6 +31,9 @@ async function main() {
 
 	console.log(GLOBALS);
 
+	// Change title of the document to title of the mixtape
+	document.title = `${GLOBALS.title}`;
+
 	preventInstallPrompt();
 
 	// Get a reference to the container element
