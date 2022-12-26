@@ -37,6 +37,7 @@ async function main() {
 	}
 
 	preventInstallPrompt();
+	preventLongPressVibration();
 
 	// Get a reference to the container element
 	const container = document.querySelector("#scene-container");
@@ -152,3 +153,12 @@ function isLocalNetwork(hostname = window.location.hostname) {
 		hostname.endsWith(".local")
 	);
 }
+
+function preventLongPressVibration(){
+	document.body.addEventListener("touchstart", (event)=>{
+		event.preventDefault();
+		event.stopPropagation();
+	});
+}
+
+
