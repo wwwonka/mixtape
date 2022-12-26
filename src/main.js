@@ -61,9 +61,11 @@ async function main() {
 
 	} else {
 		console.log("Serving large audio file from the internet");
-		// 
-		document.getElementById('song').innerHTML = '<audio id="audio-player" controls="controls" src="media/Blue Browne.mp3" type="audio/mpeg">';
-
+		
+// 
+document.getElementById(
+			"song"
+		).src = `https://github.com/wwwonka/mixtape/raw/main/assets/audio/${GLOBALS.audio}`;
 	}
 	document.getElementById("song").load();
 }
