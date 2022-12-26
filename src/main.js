@@ -53,6 +53,8 @@ async function main() {
 	// Start the animation loop
 	world.start();
 
+	
+
 	if (isLocalNetwork()) {
 		console.log("Serving large audio file from local network");
 		document.getElementById("song").src = `audio/${GLOBALS.audio}`;
@@ -155,10 +157,9 @@ function isLocalNetwork(hostname = window.location.hostname) {
 }
 
 function preventLongPressVibration(){
-	document.body.addEventListener("touchstart", (event)=>{
+	document.getElementById("scene-container").addEventListener("touchstart", (event)=>{
 		event.preventDefault();
-		event.stopPropagation();
-	});
+	})
 }
 
 
