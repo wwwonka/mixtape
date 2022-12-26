@@ -1,7 +1,7 @@
 {
 	"name": "mixtape",
 	"version": "1.0.0",
-	"description": "A so-called social experiment around analogical mixtapes",
+	"description": "A so-called 'social experiment' around analogical mixtapes",
 	"private": true,
 	"license": "UNLICENSED",
 	"author": "wwwonka <julien.m.miquelon@gmail.com>",
@@ -26,7 +26,6 @@
 	"devDependencies": {
 		"@yushijinhun/three-minifier-rollup": "^0.4.0",
 		"find-remove": "^4.1.0",
-		"glob": "^8.0.3",
 		"rollup-plugin-cleanup": "^3.2.1",
 		"rollup-plugin-critical": "^1.0.12",
 		"vite": "^4.0.3",

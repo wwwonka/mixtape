@@ -1,6 +1,3 @@
-import fs from "fs";
-import glob from "glob";
-
 import {defineConfig} from "vite";
 
 // Vite plugins
@@ -240,7 +237,6 @@ export default defineConfig({
 		mkcert({
 			hosts: ["localhost", "local ip addrs", "macbook.local"],
 		}),
-		// cleanup(),
 		PluginCritical({
 			criticalUrl: "./build/index.html",
 			criticalBase: "./build/",
@@ -251,44 +247,9 @@ export default defineConfig({
 				target: {
 					html: "./index.html",
 					uncritical: "./scripts/index.css",
-					// uncritical: glob("./build/scripts/*.css", (files) => {
-					// 	files[0];
-					// }),
-					// uncritical:
 				},
 			},
 		}),
+		cleanup(),
 	],
 });
-
-// glob("./build/scripts/*.css", function (files) {
-// 	console.log(files);
-// });
-
-// glob("*.css", {cwd: "./build/scripts/"}, function (er, files) {
-// 	return files[0];
-// });
-
-glob("*.css", {cwd: "./build/scripts/"}, function (er, files) {
-	console.log(typeof files[0]);
-	console.log(files[0]);
-});
-// fs.access("./build/*.css", fs.F_OK, (err) => {
-// 	if (err) {
-// 		console.error(err);
-// 		return;
-// 	}
-
-// 	console.log()
-// });
-
-// fs.readdirSync("./build/scripts").filter((allFilesPaths) => {
-// 	if (allFilesPaths.match(/\.css$/) !== null) {
-// 		console.log(typeof allFilesPaths);
-// 		console.log(allFilesPaths);
-// 	}
-// });
-// fs.readdirSync("./build/scripts").filter((allFilesPaths) => {
-// 	console.log(allFilesPaths.match(/\.css$/));
-// 	// var files = fs.readdirSync("C:/tmp").filter((fn) => fn.endsWith(".csv"));
-// });
