@@ -1,14 +1,21 @@
+import fs from "fs";
+import glob from "glob";
+
 import {defineConfig} from "vite";
 
+// Vite plugins
 import {threeMinifier} from "@yushijinhun/three-minifier-rollup";
 import {ViteMinifyPlugin} from "vite-plugin-minify";
 import {VitePWA} from "vite-plugin-pwa";
+import PluginCritical from "rollup-plugin-critical";
 import mkcert from "vite-plugin-mkcert";
 import {terser} from "rollup-plugin-terser";
 import cleanup from "rollup-plugin-cleanup";
 
 import findRemoveSync from "find-remove";
 
+// Since we are hosted on CloudFlare Pages and it doesn't allow assets larger than 25 mb,
+// We will remove it from our build and stream the audio from GitHub directly in the code. (See main.js)
 if (process.env.CF_PAGES) {
 	console.log(
 		"Building for Cloudflare Pages build, removing files of over 25MB in size..."
@@ -28,6 +35,11 @@ export default defineConfig({
 		chunkSizeWarningLimit: 10485760,
 		assetsInlineLimit: 4096, // 4kb
 		rollupOptions: {
+			output: {
+				entryFileNames: `scripts/[name].js`,
+				chunkFileNames: `scripts/[name].js`,
+				assetFileNames: `scripts/[name].[ext]`,
+			},
 			plugins: [
 				terser({
 					compress: {
@@ -95,12 +107,8 @@ export default defineConfig({
 					'A so-called "social experiment" around analogical mixtapes.',
 				dir: "auto",
 				display: "standalone",
-				display_override: [
-					"window-controls-overlay",
-					"standalone",
-					// "browser",
-				],
-				orientation: "any",
+				display_override: ["window-controls-overlay", "standalone"],
+				orientation: "portrait-primary",
 
 				theme_color: "#F2F2F2",
 				background_color: "#F2F2F2", // Should be the same as the 3d renderer background
@@ -232,6 +240,55 @@ export default defineConfig({
 		mkcert({
 			hosts: ["localhost", "local ip addrs", "macbook.local"],
 		}),
-		cleanup(),
+		// cleanup(),
+		PluginCritical({
+			criticalUrl: "./build/index.html",
+			criticalBase: "./build/",
+			criticalPages: [{uri: "", template: "index"}],
+			criticalConfig: {
+				inline: true,
+				extract: true,
+				target: {
+					html: "./index.html",
+					uncritical: "./scripts/index.css",
+					// uncritical: glob("./build/scripts/*.css", (files) => {
+					// 	files[0];
+					// }),
+					// uncritical:
+				},
+			},
+		}),
 	],
 });
+
+// glob("./build/scripts/*.css", function (files) {
+// 	console.log(files);
+// });
+
+// glob("*.css", {cwd: "./build/scripts/"}, function (er, files) {
+// 	return files[0];
+// });
+
+glob("*.css", {cwd: "./build/scripts/"}, function (er, files) {
+	console.log(typeof files[0]);
+	console.log(files[0]);
+});
+// fs.access("./build/*.css", fs.F_OK, (err) => {
+// 	if (err) {
+// 		console.error(err);
+// 		return;
+// 	}
+
+// 	console.log()
+// });
+
+// fs.readdirSync("./build/scripts").filter((allFilesPaths) => {
+// 	if (allFilesPaths.match(/\.css$/) !== null) {
+// 		console.log(typeof allFilesPaths);
+// 		console.log(allFilesPaths);
+// 	}
+// });
+// fs.readdirSync("./build/scripts").filter((allFilesPaths) => {
+// 	console.log(allFilesPaths.match(/\.css$/));
+// 	// var files = fs.readdirSync("C:/tmp").filter((fn) => fn.endsWith(".csv"));
+// });
