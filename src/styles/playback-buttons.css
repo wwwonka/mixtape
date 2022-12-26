@@ -63,6 +63,8 @@ button:focus {
 	margin-left: -150px;
 	transform: scale3d(0.5, 0.5, 0.5);
 }
+
+
 .ui-container .btn {
 	position: relative;
 	width: 80px;
@@ -78,6 +80,11 @@ button:focus {
 
 	/* This will reveal the button when page loads */
 	transform: scale(1.2, 1.2) translate(0, 0);
+}
+@media (prefers-color-scheme: dark) {
+.ui-container .btn {
+		background-color: #f2f2f2;
+}
 }
 .ui-container .btn.hide {
 	transform: scale(0, 0) translate(0, 50vh);
