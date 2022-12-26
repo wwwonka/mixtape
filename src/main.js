@@ -58,11 +58,12 @@ async function main() {
 	if (isLocalNetwork()) {
 		console.log("Serving large audio file from local network");
 		document.getElementById("song").src = `audio/${GLOBALS.audio}`;
+
 	} else {
 		console.log("Serving large audio file from the internet");
-		document.getElementById(
-			"song"
-		).src = `https://github.com/wwwonka/mixtape/raw/main/assets/audio/${GLOBALS.audio}`;
+		// 
+		document.getElementById('song').innerHTML = '<audio id="audio-player" controls="controls" src="media/Blue Browne.mp3" type="audio/mpeg">';
+
 	}
 	document.getElementById("song").load();
 }

@@ -44,7 +44,7 @@ function setPlayButton(world) {
 
 function PLAY() {
 	if (navigator.vibrate) {
-		navigator.vibrate(5);
+		navigator.vibrate(8);
 	}
 	btnSound.play();
 	song.play();

@@ -61,7 +61,7 @@ export default defineConfig({
 	server: {
 		host: "0.0.0.0",
 		port: "8080",
-		// https: true,
+		https: true,
 	},
 
 	plugins: [
@@ -234,9 +234,9 @@ export default defineConfig({
 			],
 			prefer_related_applications: false,
 		}),
-		// mkcert({
-		// 	hosts: ["localhost", "local ip addrs", "macbook.local"],
-		// }),
+		mkcert({
+			hosts: ["localhost", "local ip addrs", "macbook.local"],
+		}),
 		PluginCritical({
 			criticalUrl: "./build/index.html",
 			criticalBase: "./build/",

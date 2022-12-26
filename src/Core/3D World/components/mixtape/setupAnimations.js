@@ -30,17 +30,17 @@ function onMouseInAnimation(model) {
 	// And this is how much bigger we want to make it
 	const modelScaleFactor = 1.05;
 
-	scaleUp = new TWEEN.Tween(model.scale)
-		.to(
-			{
-				x: initialScale.x * modelScaleFactor,
-				y: initialScale.y * modelScaleFactor,
-				z: initialScale.z * modelScaleFactor,
-			},
-			800
-		)
-		.easing(TWEEN.Easing.Back.InOut)
-		.start();
+	// scaleUp = new TWEEN.Tween(model.scale)
+	// 	.to(
+	// 		{
+	// 			x: initialScale.x * modelScaleFactor,
+	// 			y: initialScale.y * modelScaleFactor,
+	// 			z: initialScale.z * modelScaleFactor,
+	// 		},
+	// 		800
+	// 	)
+	// 	.easing(TWEEN.Easing.Back.InOut)
+	// 	.start();
 
 	// scaleUp.onComplete(() => {
 	world.controls.enabled = true;

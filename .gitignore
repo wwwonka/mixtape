@@ -22,6 +22,7 @@ node_modules/
 
 # Project Specific
 .env
-build/
+
 dev/
 **/dev-dist/
+build/
