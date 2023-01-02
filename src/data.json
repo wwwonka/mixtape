@@ -64,5 +64,11 @@
 		"audio": "playlist_celimi.mp3",
 		"title": "À Céli, Mimi, Lili, Pico, Balou  | Du Père-Noël",
 		"artist": "Joyeux noël, les vieux..."
+	},
+	"vincent": {
+		"model": "mixtape_vincent.glb",
+		"audio": "playlist_vincent.mp3",
+		"title": "#mixtape",
+		"artist": "..."
 	}
 }
