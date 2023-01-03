@@ -53,11 +53,11 @@
 		"title": "To: Katrina | From: Santa Claus",
 		"artist": "Joyeux noël, vieux crush inavoué..."
 	},
-	"amelie": {
-		"model": "mixtape_amelie.glb",
+	"am%25C3%25A9": {
+		"model": "mixtape_amé.glb",
 		"audio": "playlist_amelie.mp3",
-		"title": "À Amé | Du Père-Noël",
-		"artist": "Joyeux jour de Jésus, miss mystère"
+		"title": "#mixtape",
+		"artist": "..."
 	},
 	"celimi": {
 		"model": "mixtape_celimi.glb",

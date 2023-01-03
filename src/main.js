@@ -11,7 +11,11 @@ async function main() {
 	// https://www.codingem.com/javascript-how-to-parse-url/
 	const url = new URL(window.location.href);
 	const hash = url.search;
-	let parsedHash = hash.replace("?", "");
+
+	// remove the ? at the beginning of query string:
+	let parsedHash = encodeURI(hash.replace("?", ""));
+
+	// console.log(encodeURI(parsedHash));
 
 	// if there is no hash, set parsed hash as undefined
 	if (parsedHash.length === 0) {
@@ -52,8 +56,6 @@ async function main() {
 
 	// Start the animation loop
 	world.start();
-
-	
 
 	if (isLocalNetwork()) {
 		console.log("Serving large audio file from local network");
@@ -156,10 +158,10 @@ function isLocalNetwork(hostname = window.location.hostname) {
 	);
 }
 
-function preventLongPressVibration(){
-	document.getElementById("scene-container").addEventListener("touchstart", (event)=>{
-		event.preventDefault();
-	})
+function preventLongPressVibration() {
+	document
+		.getElementById("scene-container")
+		.addEventListener("touchstart", (event) => {
+			event.preventDefault();
+		});
 }
-
-
