@@ -15,7 +15,7 @@ async function main() {
 	// remove the ? at the beginning of query string:
 	let parsedHash = hash.replace("?", "");
 	// for special characters, we must use:
-	let decodedHash = decodeURI();
+	let decodedHash = decodeURI(parsedHash);
 
 	// if there is no hash, set parsed hash as undefined
 	if (parsedHash.length === 0) {
@@ -24,13 +24,9 @@ async function main() {
 			"There are no valid recipient to this mixtape, loading default..."
 		);
 	} else {
-		console.log(
-			"The recipient of this mixtape should be:",
-			decodeURI(parsedHash)
-		);
-		console.log(decodeURI(parsedHash));
+		console.log("The recipient of this mixtape should be:", decodedHash);
 	}
-	if (json.hasOwnProperty(decodeURI(parsedHash))) {
+	if (json.hasOwnProperty(decodedHash)) {
 		// console.log(json);
 		console.log("Setting the proper assets to load");
 		GLOBALS = json[decodeURI(parsedHash)];
