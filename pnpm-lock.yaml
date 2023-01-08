@@ -8,10 +8,10 @@ specifiers:
   rollup-plugin-cleanup: ^3.2.1
   rollup-plugin-critical: ^1.0.12
   three: ^0.148.0
-  vite: ^4.0.3
+  vite: ^4.0.4
   vite-plugin-minify: ^1.5.2
   vite-plugin-mkcert: ^1.10.1
-  vite-plugin-pwa: ^0.14.0
+  vite-plugin-pwa: ^0.14.1
 
 dependencies:
   '@tweenjs/tween.js': 18.6.4
@@ -23,10 +23,10 @@ devDependencies:
   find-remove: 4.1.0
   rollup-plugin-cleanup: 3.2.1
   rollup-plugin-critical: 1.0.12
-  vite: 4.0.3
-  vite-plugin-minify: 1.5.2_vite@4.0.3
-  vite-plugin-mkcert: 1.10.1_vite@4.0.3
-  vite-plugin-pwa: 0.14.0_vite@4.0.3
+  vite: 4.0.4
+  vite-plugin-minify: 1.5.2_vite@4.0.4
+  vite-plugin-mkcert: 1.10.1_vite@4.0.4
+  vite-plugin-pwa: 0.14.1_vite@4.0.4
 
 packages:
 
@@ -5191,16 +5191,16 @@ packages:
       teex: 1.0.1
     dev: true
 
-  /vite-plugin-minify/1.5.2_vite@4.0.3:
+  /vite-plugin-minify/1.5.2_vite@4.0.4:
     resolution: {integrity: sha512-clf3THHlet1jD35y8+mbw/xgACbdUQ1Eyc9zZFiqaxVOZLSC3UbrkOYOG+Nf4cleRjWgb8czbXrnQiWZICVh3Q==}
     peerDependencies:
       vite: '*'
     dependencies:
       html-minifier-terser: 6.1.0
-      vite: 4.0.3
+      vite: 4.0.4
     dev: true
 
-  /vite-plugin-mkcert/1.10.1_vite@4.0.3:
+  /vite-plugin-mkcert/1.10.1_vite@4.0.4:
     resolution: {integrity: sha512-fNNC0z+AcBZExKedjWC7bWlDMf4+WZJqO/4aYf7C/vYY1dqYVOM+zowwTYV0xSx5ZQgplfangPkZk+RwdUlpBg==}
     engines: {node: '>=v16.0.0'}
     peerDependencies:
@@ -5210,14 +5210,14 @@ packages:
       axios: 0.21.4_debug@4.3.4
       debug: 4.3.4
       picocolors: 1.0.0
-      vite: 4.0.3
+      vite: 4.0.4
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
-  /vite-plugin-pwa/0.14.0_vite@4.0.3:
-    resolution: {integrity: sha512-3wZx47PLWTckOQhc8Y6YZjAbNZ89Ovh4TdCT97MGhgl7aFd2LUekVnAmIgFwgMqyxzJ93nmkPF/ALpEW/i2qCg==}
+  /vite-plugin-pwa/0.14.1_vite@4.0.4:
+    resolution: {integrity: sha512-5zx7yhQ8RTLwV71+GA9YsQQ63ALKG8XXIMqRJDdZkR8ZYftFcRgnzM7wOWmQZ/DATspyhPih5wCdcZnAIsM+mA==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
     dependencies:
@@ -5226,7 +5226,7 @@ packages:
       fast-glob: 3.2.12
       pretty-bytes: 6.0.0
       rollup: 3.8.1
-      vite: 4.0.3
+      vite: 4.0.4
       workbox-build: 6.5.4
       workbox-window: 6.5.4
     transitivePeerDependencies:
@@ -5234,8 +5234,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite/4.0.3:
-    resolution: {integrity: sha512-HvuNv1RdE7deIfQb8mPk51UKjqptO/4RXZ5yXSAvurd5xOckwS/gg8h9Tky3uSbnjYTgUm0hVCet1cyhKd73ZA==}
+  /vite/4.0.4:
+    resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:

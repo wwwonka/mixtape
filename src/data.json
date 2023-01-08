@@ -53,7 +53,7 @@
 		"title": "To: Katrina | From: Santa Claus",
 		"artist": "Joyeux noël, vieux crush inavoué..."
 	},
-	"am%25C3%25A9": {
+	"amé": {
 		"model": "mixtape_amé.glb",
 		"audio": "playlist_amelie.mp3",
 		"title": "#mixtape",
@@ -68,6 +68,12 @@
 	"vincent": {
 		"model": "mixtape_vincent.glb",
 		"audio": "playlist_vincent.mp3",
+		"title": "#mixtape",
+		"artist": "..."
+	},
+	"נהררן": {
+		"model": "mixtape_nahar.glb",
+		"audio": "playlist_nahar.mp3",
 		"title": "#mixtape",
 		"artist": "..."
 	}

@@ -13,21 +13,27 @@ async function main() {
 	const hash = url.search;
 
 	// remove the ? at the beginning of query string:
-	let parsedHash = encodeURI(hash.replace("?", ""));
-
-	// console.log(encodeURI(parsedHash));
+	let parsedHash = hash.replace("?", "");
+	// for special characters, we must use:
+	let decodedHash = decodeURI();
 
 	// if there is no hash, set parsed hash as undefined
 	if (parsedHash.length === 0) {
 		parsedHash = undefined;
-		console.log("The recipient of this mixtape is", parsedHash + "...");
+		console.log(
+			"There are no valid recipient to this mixtape, loading default..."
+		);
 	} else {
-		console.log("The recipient of this mixtape should be:", parsedHash);
+		console.log(
+			"The recipient of this mixtape should be:",
+			decodeURI(parsedHash)
+		);
+		console.log(decodeURI(parsedHash));
 	}
-	if (json.hasOwnProperty(parsedHash)) {
+	if (json.hasOwnProperty(decodeURI(parsedHash))) {
 		// console.log(json);
 		console.log("Setting the proper assets to load");
-		GLOBALS = json[parsedHash];
+		GLOBALS = json[decodeURI(parsedHash)];
 	} else {
 		console.log("We should load default assets");
 		GLOBALS = json.default;
