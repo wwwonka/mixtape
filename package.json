@@ -30,7 +30,7 @@
 		"rollup-plugin-critical": "^1.0.12",
 		"vite": "^4.0.4",
 		"vite-plugin-minify": "^1.5.2",
-		"vite-plugin-mkcert": "^1.10.1",
+		"vite-plugin-mkcert": "^1.11.0",
 		"vite-plugin-pwa": "^0.14.1"
 	}
 }

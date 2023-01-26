@@ -5,8 +5,8 @@ const setSize = (container, camera, renderer, composer) => {
 	renderer.setSize(container.clientWidth, container.clientHeight);
 	renderer.setPixelRatio(window.devicePixelRatio);
 
-	composer.setSize(container.clientWidth, container.clientHeight);
-	composer.setPixelRatio(window.devicePixelRatio);
+	// composer.setSize(container.clientWidth, container.clientHeight);
+	// composer.setPixelRatio(window.devicePixelRatio);
 };
 
 class Resizer {
@@ -16,7 +16,8 @@ class Resizer {
 
 		window.addEventListener("resize", () => {
 			// Set the size again if a resize occurs
-			setSize(container, camera, renderer, composer);
+			setSize(container, camera, renderer);
+			// setSize(container, camera, renderer, composer);
 
 			// Perform any custom actions
 			this.onResize();

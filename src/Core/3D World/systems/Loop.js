@@ -1,20 +1,22 @@
 import {Clock} from "three";
-import {ceilPowerOfTwo} from "three/src/math/MathUtils";
+// import {ceilPowerOfTwo} from "three/src/math/MathUtils";
 
 const clock = new Clock();
 
 class Loop {
-	constructor(camera, scene, renderer, composer) {
+	constructor(camera, scene, renderer) {
+		// constructor(camera, scene, renderer, composer) {
 		this.camera = camera;
 		this.scene = scene;
 		this.renderer = renderer;
-		this.composer = composer;
+		// this.composer = composer;
 		this.updatables = [];
 	}
 
 	start() {
 		this.tick();
-		this.composer.render(this.scene, this.camera);
+		this.renderer.render(this.scene, this.camera);
+		// this.composer.render(this.scene, this.camera);
 
 		requestAnimationFrame(() => {
 			this.start();
@@ -23,9 +25,9 @@ class Loop {
 		// 	// Tell every animated object to tick forward one frame
 		// 	this.tick();
 
-		// 	// Render a frame
-		// 	this.composer.render(this.scene, this.camera);
-		// 	// this.renderer.render(this.scene, this.camera);
+		// Render a frame
+		// this.composer.render(this.scene, this.camera);
+		// this.renderer.render(this.scene, this.camera);
 		// });
 	}
 

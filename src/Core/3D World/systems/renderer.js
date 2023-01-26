@@ -3,7 +3,7 @@ import {WebGLRenderer} from "three/src/renderers/WebGLRenderer";
 
 function createRenderer() {
 	const renderer = new WebGLRenderer({
-		antialias: false,
+		antialias: true,
 		powerPreference: "high-performance", // "low-power",
 		precision: "highp",
 		// clearColor,

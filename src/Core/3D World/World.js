@@ -7,7 +7,7 @@ import {createScene} from "./components/scene.js";
 
 import {createControls} from "./systems/controls.js";
 import {createRenderer} from "./systems/renderer.js";
-import {createEffectComposer} from "./systems/effectComposer.js";
+// import {createEffectComposer} from "./systems/effectComposer.js";
 import {Resizer} from "./systems/Resizer.js";
 import {Loop} from "./systems/Loop.js";
 import {MeshPicker} from "./systems/MeshPicker.js";
@@ -20,17 +20,17 @@ class World {
 		this.camera = createCamera();
 		this.renderer = createRenderer();
 		this.scene = createScene();
-		this.composer = createEffectComposer(
-			this.camera,
-			this.renderer,
-			this.scene,
-			container
-		);
+		// this.composer = createEffectComposer(
+		// 	this.camera,
+		// 	this.renderer,
+		// 	this.scene,
+		// 	container
+		// );
 		this.loop = new Loop(
 			this.camera,
 			this.scene,
-			this.renderer,
-			this.composer
+			this.renderer
+			// this.composer
 		);
 		this.meshPicker = new MeshPicker(
 			this.camera,
@@ -56,8 +56,8 @@ class World {
 		const resizer = new Resizer(
 			container,
 			this.camera,
-			this.renderer,
-			this.composer
+			this.renderer
+			// this.composer
 		);
 	}
 
@@ -92,8 +92,8 @@ class World {
 
 	// Render single frame
 	render() {
-		this.composer.render(this.scene, this.camera);
-		// this.renderer.render(this.scene, this.camera);
+		// this.composer.render(this.scene, this.camera);
+		this.renderer.render(this.scene, this.camera);
 	}
 
 	// Animation loop
