@@ -3,6 +3,7 @@ import {defineConfig} from "vite";
 // Vite plugins
 import {threeMinifier} from "@yushijinhun/three-minifier-rollup";
 import {ViteMinifyPlugin} from "vite-plugin-minify";
+import viteCompression from "vite-plugin-compression";
 import {VitePWA} from "vite-plugin-pwa";
 import PluginCritical from "rollup-plugin-critical";
 import mkcert from "vite-plugin-mkcert";
@@ -68,6 +69,12 @@ export default defineConfig({
 		{...threeMinifier(), enforce: "pre"},
 		ViteMinifyPlugin({
 			comments: false,
+		}),
+		viteCompression({
+			filter: /\.(js|mjs|json|css|html|glb)$/i,
+			algorithm: "brotliCompress",
+			ext: ".br",
+			deleteOriginFile: false,
 		}),
 		VitePWA({
 			registerType: "autoUpdate",
