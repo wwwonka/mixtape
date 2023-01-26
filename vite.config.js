@@ -74,7 +74,7 @@ export default defineConfig({
 			filter: /\.(js|mjs|json|css|html|glb)$/i,
 			algorithm: "brotliCompress",
 			ext: ".br",
-			deleteOriginFile: false,
+			deleteOriginFile: true,
 		}),
 		VitePWA({
 			registerType: "autoUpdate",
