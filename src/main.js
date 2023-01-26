@@ -57,7 +57,8 @@ async function main() {
 	await world.init();
 
 	// Start the animation loop
-	world.start();
+	world.render();
+	// world.start();
 
 	if (isLocalNetwork()) {
 		console.log("Serving large audio file from local network");

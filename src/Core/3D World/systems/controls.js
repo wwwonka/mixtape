@@ -4,8 +4,9 @@ function createControls(camera, canvas) {
 	const controls = new OrbitControls(camera, canvas);
 
 	controls.enableDamping = true;
-	// controls.dampingFactor = 1;
+	controls.dampingFactor = 0.005;
 	controls.maxZoom = 0.2;
+	controls.maxDistance = 2;
 	controls.enablePan = false;
 	controls.zoomSpeed = 0.4;
 

@@ -85,11 +85,17 @@ class World {
 
 		this.lights.mainLight.target = mixtape;
 
+		this.loop.tick();
+
 		const playButton = setPlayButton(this);
 
 		setTimeout(() => {
 			playButton.classList.remove("hide");
 		}, 1200);
+
+		playButton.addEventListener("transitionend", function () {
+			world.start();
+		});
 	}
 
 	// Render single frame
