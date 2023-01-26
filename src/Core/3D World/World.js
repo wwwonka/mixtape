@@ -79,6 +79,8 @@ class World {
 
 		this.meshPicker.enable();
 
+		this.controls.update();
+
 		this.scene.add(mixtape);
 
 		this.lights.mainLight.target = mixtape;
