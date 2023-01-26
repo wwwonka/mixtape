@@ -70,12 +70,6 @@ export default defineConfig({
 		ViteMinifyPlugin({
 			comments: false,
 		}),
-		viteCompression({
-			filter: /\.(js|mjs|json|css|html|glb)$/i,
-			algorithm: "brotliCompress",
-			ext: ".br",
-			deleteOriginFile: true,
-		}),
 		VitePWA({
 			registerType: "autoUpdate",
 			injectRegister: "inline",
@@ -258,5 +252,12 @@ export default defineConfig({
 			},
 		}),
 		cleanup(),
+		viteCompression({
+			// filter: /\.(js|mjs|json|css|html|glb)$/i,
+			filter: /\.(glb)$/i,
+			algorithm: "brotliCompress",
+			ext: ".br",
+			deleteOriginFile: true,
+		}),
 	],
 });
