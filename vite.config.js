@@ -293,7 +293,7 @@ export default defineConfig({
 				level: 11,
 			},
 			ext: ".br",
-			deleteOriginFile: true,
+			deleteOriginFile: false,
 		}),
 	],
 });
