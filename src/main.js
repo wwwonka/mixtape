@@ -4,6 +4,7 @@ import json from "./data.json";
 
 let displayMode;
 
+window.renderLoopHasStarted = false;
 window.GLOBALS = {};
 
 async function main() {

@@ -56,6 +56,7 @@ class World {
 		const resizer = new Resizer(
 			container,
 			this.camera,
+			this.scene,
 			this.renderer
 			// this.composer
 		);
@@ -87,14 +88,20 @@ class World {
 
 		this.loop.tick();
 
+		// if (window.innerHeight / window.innerWidth > 1.95) {
+		// 	this.scene.scale.set(0.8, 0.8, 0.8);
+		// }
+
 		const playButton = setPlayButton(this);
 
 		setTimeout(() => {
 			playButton.classList.remove("hide");
 		}, 1200);
 
-		playButton.addEventListener("transitionend", function () {
-			world.start();
+		playButton.addEventListener("transitionend", () => {
+			if (!renderLoopHasStarted) {
+				world.start();
+			}
 		});
 	}
 

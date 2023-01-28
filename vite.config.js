@@ -289,6 +289,9 @@ export default defineConfig({
 			filter: /\.(js|mjs|json|css|html|glb|svg|txt|webmanifest)$/i,
 			threshold: 0,
 			algorithm: "brotliCompress",
+			compressionOptions: {
+				level: 11,
+			},
 			ext: ".br",
 			deleteOriginFile: true,
 		}),

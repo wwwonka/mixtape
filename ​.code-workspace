@@ -51,15 +51,15 @@
 	"folders": [
 		{
 			"name": "[Website]",
-			"path": "../src"
+			"path": "src"
 		},
 		{
 			"name": "[Assets]",
-			"path": "../assets/"
+			"path": "assets/"
 		},
 		{
 			"name": "[Config]",
-			"path": ".."
+			"path": "."
 		}
 		// {
 		// 	"name": "[Build]",

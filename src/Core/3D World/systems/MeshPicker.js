@@ -31,6 +31,9 @@ class MeshPicker {
 				"touchstart",
 				(event) => {
 					this.scene.getObjectByName("mixtape").onMouseIn();
+					if (!renderLoopHasStarted) {
+						world.start();
+					}
 				},
 				false
 			);
@@ -127,6 +130,10 @@ class MeshPicker {
 function pointerDownHandler() {
 	console.log("Pointer down");
 	pointerDown = true;
+
+	if (!renderLoopHasStarted) {
+		world.start();
+	}
 
 	// If mouse intersects the model
 	if (intersects.length === 0) {
