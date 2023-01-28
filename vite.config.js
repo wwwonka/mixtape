@@ -289,10 +289,15 @@ export default defineConfig({
 			filter: /\.(js|mjs|json|css|glb|svg|txt|webmanifest)$/i,
 			threshold: 0,
 			algorithm: "brotliCompress",
-			compressionOptions: {
-				level: 11,
-			},
 			ext: ".br",
+			deleteOriginFile: false,
+		}),
+		viteCompression({
+			disable: false,
+			filter: /\.(js|mjs|json|css|glb|svg|txt|webmanifest)$/i,
+			threshold: 0,
+			algorithm: "gzip",
+			ext: ".gz",
 			deleteOriginFile: false,
 		}),
 	],
