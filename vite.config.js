@@ -286,7 +286,7 @@ export default defineConfig({
 		}),
 		viteCompression({
 			disable: !compression,
-			filter: /\.(js|mjs|json|css|html|glb|svg|txt|webmanifest)$/i,
+			filter: /\.(js|mjs|json|css|glb|svg|txt|webmanifest)$/i,
 			threshold: 0,
 			algorithm: "brotliCompress",
 			compressionOptions: {
