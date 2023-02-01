@@ -1,7 +1,7 @@
 {
 	"default": {
 		"model": "mixtape.glb",
-		"audio": "_default.mp3",
+		"audio": "playlist_default.mp3",
 		"title": "Dear people of the world...",
 		"artist": "I miss analogical stuff even though I am from a digital world"
 	},
